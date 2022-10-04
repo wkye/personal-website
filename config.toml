@@ -1,11 +1,11 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'William Kyes'
+title = 'William Kye'
 theme = "beautifulhugo"
 pygmentsStyle = "trac"
 pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 [Params]
-#  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
+ homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
   subtitle = "Build a beautiful and simple website in minutes"
