@@ -8,6 +8,8 @@ authors = ["William Kye <williamkye93@gmail.com>"]
 python = "^3.8"
 nbconvert = "5.6.1"
 traitlets = "4.3.3"
+nbhugoexporter = "^0.2.0"
+jupyter = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
 
