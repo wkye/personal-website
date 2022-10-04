@@ -2,3 +2,7 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'William Kye'
 theme = 'hugo-theme-mini'
+
+[Params]
+    headline = "ethan rosenthal"
+    logoBig = "/images/profile_pic.jpg"
