@@ -6,4 +6,4 @@ author = "William Kye"
 enableComments = false
 +++
 
-This is a testd 
+Put you blog here. hopefully in jupypter notebook form
