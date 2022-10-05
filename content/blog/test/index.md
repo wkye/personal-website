@@ -4,20 +4,17 @@ draft: false
 enableEmoji: true
 hasMath: false
 notebook: true
-slug: "alignimation"
-tags: ['computer-vision', 'deep-learning', 'machine-learning']
+slug: "test"
+tags: ['test', 'deep-learning', 'machine-learning']
 title: "test"   
 ---
-{{% jupyter_cell_start code %}}
+{{% jupyter_cell_start markdown %}}
 
+This a test blog post
 
-{{% jupyter_input_start %}}
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
 
-```python
-# This is a test
-```
-
-{{% jupyter_input_end %}}
+# Title Of Notebook
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
 
@@ -25,14 +22,11 @@ title: "test"
 {{% jupyter_input_start %}}
 
 ```python
-import pandas as pd
+# This is a test
+import numpy
 ```
 
 {{% jupyter_input_end %}}
-
-    /Users/willie/Library/Caches/pypoetry/virtualenvs/analysis-v0-Cqj4KhNN-py3.8/lib/python3.8/site-packages/pandas/compat/__init__.py:120: UserWarning: Could not import the lzma module. Your installed Python is incomplete. Attempting to use lzma compression will result in a RuntimeError.
-      warnings.warn(msg)
-
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
 
