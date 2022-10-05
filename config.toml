@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://incandescent-tiramisu-b11fae.netlify.app'
 languageCode = 'en-us'
 title = 'William Kye'
 theme = 'hugo-theme-mini'
@@ -6,4 +6,3 @@ enableEmoji = true
 
 [Params]
     headline = "William Kye"
-    logoBig = "/images/profile_pic.jpg"

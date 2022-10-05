@@ -10,7 +10,7 @@ title: "Make You Own Website Using Hugo and Netlify"
 ---
 {{% jupyter_cell_start markdown %}}
 
-{{<figure src="/images/avatar.png">}}
+{{<figure src="/images/personal_website/making_website_wip.png">}}
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
 
