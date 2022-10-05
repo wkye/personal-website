@@ -10,9 +10,11 @@ title: "Make You Own Website Using Hugo and Netlify"
 ---
 {{% jupyter_cell_start markdown %}}
 
-{{<figure src="/images/personal_website/making_website_wip.png">}}
+<video style="display:block; width:100%; height:auto;" autoplay="" muted="" loop="loop">
+    <source src="videos/personal-website/test.mp4" type="video/mp4">
+</video>
 
-{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+<br>
 
 I have no formal training in computer science and would not consider myself an engineer. I do, however, think of myself as someone who "gets the job done". As I have worked in several startups (each subsequent company tends to get smaller :eyes:), I've picked up a scrappy mindset where I love learning new things. And fortunately, these smaller starts up offer the latitude to fail quickly and learn (more?) quickly!
 
@@ -77,6 +79,32 @@ Within your `pyproject.toml` file, copy the contents of my [pyproject.toml file]
 ```
 poetry install
 ```
+
+# Getting Started: Netlify
+
+Hugo pairs nicely with Netlify. Hugo is a great service to build you app, but you Netlify to deploy your app. There is already great documentation on [pairing the two](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/), so I won't go into great detail. Just make sure you create a `netlify.toml` file and you copy and past the contents of my [netlify.toml file](https://github.com/wkye/personal-website/blob/main/netlify.toml).
+
+# Setting up your home page
+
+The first step to building your website is to choose your theme. I went with [hugo-theme-mini](https://github.com/nodejh/hugo-theme-mini) because I felt it was simplistic and met the purposes of my website. Copy the contents of the repo into your `themes` folder (Note, I had to make some small tweaks to my theme, so mine may not exactly match yours)
+```
+git clone https://github.com/nodejh/hugo-theme-mini themes/hugo-theme-mini/
+```
+
+Now that you chose and obtained your theme, update your `theme` variable within you `config.toml` file to reflect the folder that houses your theme. Your config should look something like this
+
+```
+baseURL = 'yourwebsitename' -- make sure this reflects the domain name you choose when you deploy your site
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'hugo-theme-mini'
+```
+
+Now if you run the following, your website will compile locally and you taken the first step towards building your website :tada:
+```
+hugo server
+```
+{{<figure src="/images/personal_website/hugo_home_screen.png">}}
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
 
