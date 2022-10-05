@@ -10,7 +10,7 @@ title: "Make You Own Website Using Hugo and Netlify"
 ---
 {{% jupyter_cell_start markdown %}}
 
-{{<figure src="/images/avatar.png">}}
+{{<figure src="/images/personal_website/making_website_wip.png">}}
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
 
@@ -21,14 +21,14 @@ In this post, I will show you the process of how I learned how to make this webs
 
 # Online Resources
 
-There were several people who's work I used as a reference to build my own site:
+There were several people who's work I used as a reference to build my own site: 
 - [Ethan Rosenthal](https://github.com/EthanRosenthal/website-source): My former MLE lead at Dia&Co! Built a lot of my stuff on top of the code he had already written. Was a huge help in quickly debugging my site.
 - [Lugo](https://www.youtube.com/watch?v=ZFL09qhKi5I&t=1092s): My initial testing of Hugo was helped by this tutorial.
 - [Design](https://github.com/nodejh/hugo-theme-mini): The design of my website leverages the themes from the hugo-theme-mini repository.
 
 # Getting Started: Hugo
 
-I'm assuming that you have some knowledge of python and git but this is your first foray into hugo and netlify. Let's start with what [Hugo](https://gohugo.io/) is.
+I'm assuming that you have some knowledge of python and git but this is your first foray into hugo and netlify. Let's start with what [Hugo](https://gohugo.io/) is. 
 
 Hugo is built up on Go, making it super fast and responsive. At the same time, it's abstracted out enough from Go to make it simple for people who don't build websites for a living (like me) but at the same time highly extensible. First install hugo on to your machine:
 ```
