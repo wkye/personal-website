@@ -11,3 +11,13 @@ enableEmoji = true
       unsafe = true
 [Params]
     headline = "William Kye"
+    bio = """Willie is a data enthusiast based in NYC. Formerly in a Ph.D. program
+    at the University of Notre Dame, he is technically trained as a social scientist
+    but really just a problem solver at heart. Currently a data scientist at [clockwise](getclockwise.com])
+    where he is the data czar of all things money related (stripe, growth, revenue,
+    etc. you get the picture). Willie still finds speaking in 3rd person to be
+    uncomfortable.
+    <br>
+    <br>
+    If you wanna connect or just say hi, please reach out williamkye93[at]gmail[dot]com
+    """
