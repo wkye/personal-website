@@ -27,3 +27,6 @@ enableEmoji = true
     github = "https://github.com/wkye"
     linkedin = "https://www.linkedin.com/in/william-kye-33251a114/"
     twitter = "https://twitter.com/William_Kye"
+
+[permalinks]
+  posts = "/blog/:title/"
