@@ -10,16 +10,14 @@ title: "Make You Own Website Using Hugo and Netlify"
 ---
 {{% jupyter_cell_start markdown %}}
 
-<video style="display:block; width:100%; height:auto;" autoplay="" muted="" loop="loop">
-    <source src="videos/personal-website/test.mp4" type="video/mp4">
-</video>
-
-<br>
-
 I have no formal training in computer science and would not consider myself an engineer. I do, however, think of myself as someone who "gets the job done". As I have worked in several startups (each subsequent company tends to get smaller :eyes:), I've picked up a scrappy mindset where I love learning new things. And fortunately, these smaller starts up offer the latitude to fail quickly and learn (more?) quickly!
 
 In this post, I will show you the process of how I learned how to make this website!
 <!--more-->
+
+<video style="display:block; width:100%; height:auto;" autoplay="" muted="" loop="loop">
+    <source src="videos/personal-website/test.mp4" type="video/mp4">
+</video>
 
 # Online Resources
 

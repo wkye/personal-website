@@ -3,6 +3,11 @@ languageCode = 'en-us'
 title = 'William Kye'
 theme = 'hugo-theme-mini'
 enableEmoji = true
-
+[markup]
+  [markup.highlight]
+    style = "github"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 [Params]
     headline = "William Kye"
