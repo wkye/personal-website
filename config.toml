@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = 'William Kye'
 theme = 'hugo-theme-mini'
 enableEmoji = true
+
 [markup]
   [markup.highlight]
     style = "github"
@@ -11,7 +12,9 @@ enableEmoji = true
       unsafe = true
 [Params]
     headline = "William Kye"
-    bio = """Willie is a data enthusiast based in NYC. Formerly in a Ph.D. program
+    bio = """ dafadsfads a
+    """
+    subBio = """Willie is a data enthusiast based in NYC. Formerly in a Ph.D. program
     at the University of Notre Dame, he is technically trained as a social scientist
     but really just a problem solver at heart. Currently a data scientist at [clockwise](getclockwise.com])
     where he is the data czar of all things money related (stripe, growth, revenue,
@@ -21,3 +24,6 @@ enableEmoji = true
     <br>
     If you wanna connect or just say hi, please reach out williamkye93[at]gmail[dot]com
     """
+    github = "https://github.com/wkye"
+    linkedin = "https://www.linkedin.com/in/william-kye-33251a114/"
+    twitter = "https://twitter.com/William_Kye"

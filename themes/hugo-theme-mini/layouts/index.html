@@ -1,6 +1,13 @@
 {{ define "main" }}
 {{ partial "profile.html" . }}
 
+<div id = 'mini-bio'>
+
+  {{ with .Site.Params.subBio }}
+    <p>{{ . | markdownify }}</p>
+  {{ end }}
+</div>
+
 <div id="list-page">
     {{ $pages := .Site.RegularPages }}
     {{ $paginator := .Paginate ($pages) }}
@@ -11,7 +18,7 @@
           <div>
             <h1 class="title"><a href='{{ .RelPermalink }}'>{{ $title }}</a></h1>
             <div class ="date">
-                <time datetime="{{ .PublishDate }}">{{ i18n "publishDate" . }}</time>  
+                <time datetime="{{ .PublishDate }}">{{ i18n "publishDate" . }}</time>
             </div>
           </div>
 
@@ -31,7 +38,7 @@
                   </a>
             </span>
           {{ end }}
-          
+
           {{ if $paginator.HasNext }}
               <span class="next">
                   <a href="{{.Paginator.Next.URL}}">
