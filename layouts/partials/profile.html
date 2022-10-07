@@ -1,14 +1,24 @@
 <header class="profile">
     {{ if .Site.Params.avatarLink }}
         <a href="{{ .Site.Params.avatarLink }}">
-          <img class="avatar" alt="avatar" src="{{ "/images/avatar.png" | relURL }}" style="height:auto;" />
+          <img class="avatar" alt="avatar" src="{{ "/images/personal-website/avatar.png" | relURL }}" style="height:auto;" />
         </a>
     {{ else }}
-        <img class="avatar" alt="avatar" src="{{ "/images/avatar.png" | relURL }}" style="height:auto;" />
+        <img class="avatar" alt="avatar" src="{{ "/images/personal-website/avatar.png" | relURL }}" style="height:auto;" />
     {{ end }}
 
     <h1>{{ .Site.Title }}</h1>
 
-    {{ partial "social-heading.html"}}
+    <nav class="social-heading">
+      {{ if .Site.Params.linkedin }}
+        <a target="_blank" href="{{ .Site.Params.linkedin }}">LinkedIn</a>
+      {{ end}}
+      {{ if .Site.Params.github }}
+        <a target="_blank" href="{{ .Site.Params.github }}">| GitHub</a>
+      {{ end}}
+      {{ if .Site.Params.twitter }}
+        <a target="_blank" href="{{ .Site.Params.twitter }}">| Twitter</a>
+      {{ end}}
+    </nav>
 
 </header>

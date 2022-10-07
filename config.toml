@@ -12,8 +12,6 @@ enableEmoji = true
       unsafe = true
 [Params]
     headline = "William Kye"
-    bio = """ dafadsfads a
-    """
     subBio = """Willie is a data enthusiast based in NYC. Formerly in a Ph.D. program
     at the University of Notre Dame, he is technically trained as a social scientist
     but really just a problem solver at heart. Currently a data scientist at [clockwise](getclockwise.com])

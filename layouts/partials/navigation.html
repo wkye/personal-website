@@ -3,8 +3,8 @@
 		<a href="{{ "/" | relURL }}"> <span class="arrow">←</span>{{ with .Site.Params.home }}{{ . }}{{ else }}{{ i18n "home" }}{{ end }}</a>
 	{{ end }}
 	<a href="{{ "/about" | relURL }}">{{ with .Site.Params.about }}{{ . }}{{ else }}{{ i18n "about" }}{{ end }}</a>
-	<a href="{{ "/findme" | relURL }}">{{ with .Site.Params.tags }}{{ . }}{{ else }}{{ i18n "findMe" }}{{ end }}</a>
 	<a href="{{ "/blog" | relURL }}">{{ with .Site.Params.archive }}{{ . }}{{ else }}{{ i18n "blog" }}{{ end }}</a>
+	<a href="{{ "/tags" | relURL }}">{{ with .Site.Params.tags }}{{ . }}{{ else }}{{ i18n "tags" }}{{ end }}</a>
 
 	{{ range $element := .Site.Params.Links }}
 		<a href="{{ $element.path }}">{{ $element.name }}</a>
