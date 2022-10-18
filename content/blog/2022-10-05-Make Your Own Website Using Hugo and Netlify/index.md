@@ -14,7 +14,7 @@ title: "Make Your Own Website Using Hugo and Netlify"
     <source src="/videos/personal-website/website.mp4" type="video/mp4">
 </video>
 
-I have no formal training in computer science and would not consider myself an engineer. I do, however, think of myself as someone who "gets the job done". As I have worked in several startups (each subsequent company tends to get smaller :eyes:), I've picked up a scrappy mindset where I love learning new things. And fortunately, these smaller starts up offer the latitude to fail quickly and learn (more?) quickly!
+I have no formal training in computer science and would not consider myself an engineer. I do, however, think of myself as someone who "gets the job done". As I have worked in several startups, I've picked up a scrappy mindset where I love learning new things. And fortunately, these smaller starts up offer the latitude to fail quickly and learn (more?) quickly!
 
 In this post, I will show you the process of how I learned how to make this website!
 <!--more-->
@@ -30,7 +30,7 @@ There were several people who's work I used as a reference to build my own site:
 
 I'm assuming that you have some knowledge of python and git but this is your first foray into hugo and netlify. Let's start with what [Hugo](https://gohugo.io/) is.
 
-Hugo is built up on Go, making it super fast and responsive. It's abstracted out enough from Go to make it simple for people who don't build websites for a living (like me) but at the same time highly extensible. First install hugo on to your machine:
+Hugo is built on Go, making it super fast and responsive. It's abstracted out enough from Go to make it simple for people who don't build websites for a living (like me) but at the same time highly extensible. First install hugo on to your machine:
 ```
 brew install hugo
 ```
@@ -53,7 +53,7 @@ personal-website
 └── themes
 ```
 
-For the purposes of keeping this tutorial succinct, the main folders you will utilize will be:
+For the purposes of keeping this tutorial succinct, the main folders you will be utilizing are:
 - `config.toml` - Basic configuration file. Controls things like what language your site will render in or whether to enable emojis (obviously you should enable, duh :stuck_out_tongue_winking_eye:).
 - `content` - The content in markdown form on your website.
 - `static` - All of your non-dynamic files (e.g. images, css, etc)
@@ -61,26 +61,21 @@ For the purposes of keeping this tutorial succinct, the main folders you will ut
 
 # Getting Started: Poetry
 
-Poetry is a package dependency tool. It will allow you to create a virtual environment that mimics the one I am currently in, and thus allows you to reproduce any work that I do! This should install poetry:
+Poetry is a package dependency tool. It will allow you to create a virtual environment that mimics the one I am currently in, and thus allows you to reproduce any work that I do!
+
+Once you've install poetry, initialize within your `personal-website` folder and it should create a `pyproject.toml` Within your `pyproject.toml` file, copy the contents of my [pyproject.toml file](https://github.com/wkye/personal-website/blob/main/pyproject.toml). Then run `poetry install` and SHAZAAM! This should create a `poetry.lock` file and now your machine should more or less function the same as mine :smiley::
 ```
+# install poetry
 curl -sSL https://install.python-poetry.org | python3 -
-```
-
-Once you've install poetry, intitalize within your `personal-website` folder and it should create a `pyproject.toml`:
-```
-# all prompts are optional except your name
+# initialize poetry within your project
 poetry init
-```
-
-Within your `pyproject.toml` file, copy the contents of my [pyproject.toml file](https://github.com/wkye/personal-website/blob/main/pyproject.toml). Then run the snippet below and SHAZAAM! This should create a `poetry.lock` file and now your machine should more or less function the same as mine :smiley::
-
-```
+# After copying my poetry.lock file, this should install all my packages onto your machine
 poetry install
 ```
 
 # Getting Started: Netlify
 
-Hugo pairs nicely with Netlify. Hugo is a great service to build your website, but you need Netlify to deploy your app. There is already great documentation on [pairing the two](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/), so I won't go into great detail. Just make sure you create a `netlify.toml` file and you copy and past the contents of my [netlify.toml file](https://github.com/wkye/personal-website/blob/main/netlify.toml).
+Hugo pairs nicely with Netlify. Hugo is a great service to build your website, but you need Netlify to deploy your app. There is already great documentation on [pairing the two](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/), so I won't go into great detail. But basically just create an account on netlify and connect it to your GitHub repo. Just make sure you create a `netlify.toml` file and you copy and past the contents of my [netlify.toml file](https://github.com/wkye/personal-website/blob/main/netlify.toml).
 
 # Setting up your home page
 
@@ -103,6 +98,10 @@ Now if you run the following, your website will compile locally and you taken th
 hugo server
 ```
 {{<figure src="/images/personal-website/hugo_home_screen.png">}}
+
+{{<figure src="/images/personal-website/sample_website_updated_avatar.png"
+          width="600"
+          caption="use option + ⌘ + J to use developer tools to debug your code quicker">}}
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
 

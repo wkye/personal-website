@@ -12,7 +12,7 @@ enableEmoji = true
       unsafe = true
 [Params]
     headline = "William Kye"
-    subBio = """Willie is a data enthusiast based in NYC. Formerly in a Ph.D. program
+    subBio = """Willie is a data scientist based in NYC. Formerly in a Ph.D. program
     at the University of Notre Dame, he is technically trained as a social scientist
     but really just a problem solver at heart. Currently a data scientist at [clockwise](getclockwise.com])
     where he is the data czar of all things money related (stripe, growth, revenue,
@@ -20,7 +20,7 @@ enableEmoji = true
     uncomfortable.
     <br>
     <br>
-    If you wanna connect or just say hi, please reach out williamkye93[at]gmail[dot]com
+    If you wanna connect, please reach out at williamkye93[at]gmail[dot]com
     """
     github = "https://github.com/wkye"
     linkedin = "https://www.linkedin.com/in/william-kye-33251a114/"
