@@ -61,7 +61,7 @@ For the purposes of keeping this tutorial succinct, the main folders you will ut
 
 # Getting Started: Poetry
 
-Poetry is a package dependency tool. It will allow you to create a virtual environment that mimics the one I am currently in, and thus allows you to reproduce any work that I do!
+Poetry is a package dependency tool. It will allow you to create a virtual environment that mimics the one I am currently in, and thus will enable you to reproduce any work that I do!
 
 Once you've installed poetry, initialize poetry within your `personal-website` folder and it should create a `pyproject.toml` Within your `pyproject.toml` file, copy the contents of my [pyproject.toml file](https://github.com/wkye/personal-website/blob/main/pyproject.toml). Then run `poetry install` and SHAZAAM! This should create a `poetry.lock` file and now your machine should more or less function the same as mine :smiley::
 ```
@@ -76,7 +76,7 @@ poetry install
 
 # Getting Started: Netlify
 
-Hugo pairs nicely with Netlify. Hugo is a great service to build your website, but you need Netlify to deploy your app. There is already great documentation on [pairing the two](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/), so I won't go into great detail. But basically just create an account on netlify and connect it to your GitHub repo. Make sure you create a `netlify.toml` file and you copy and past the contents of my [netlify.toml file](https://github.com/wkye/personal-website/blob/main/netlify.toml).
+Hugo pairs nicely with Netlify. Hugo is a great service to build your website, but you need Netlify to deploy your app. There is already great documentation on [pairing the two](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/), so I won't go into great detail. Create an account on netlify and connect it to your GitHub repo. Make sure you create a `netlify.toml` file and copy and paste the contents of my [netlify.toml file](https://github.com/wkye/personal-website/blob/main/netlify.toml).
 
 # Setting up your home page
 
@@ -85,7 +85,7 @@ The first step to building your website is to choose your theme. I went with [hu
 git clone https://github.com/nodejh/hugo-theme-mini themes/hugo-theme-mini/
 ```
 
-Now that you chose and obtained your theme, update your `theme` variable within you `config.toml` file to reflect the folder that houses your theme. Your config should look something like this
+Now that you chose and obtained your theme, update your `theme` variable within your` config.toml` file to reflect the folder that houses your theme. Your config should look something like this
 
 ```
 baseURL = 'yourwebsitename'
@@ -94,7 +94,7 @@ title = 'My New Hugo Site'
 theme = 'hugo-theme-mini'
 ```
 
-Now if you run `hugo server`, your website will compile locally and you taken the first step towards building your website :tada:. Just type in the localhost number produced into your browser. In this case `//localhost:52500/`.
+Now if you run `hugo server`, your website will compile locally and you have taken the first step towards building your website :tada:. Just type in the localhost number produced into your browser. In this case `//localhost:52500/`.
 ```
 hugo server
 ```
@@ -102,9 +102,9 @@ hugo server
 
 # Customizing your home page
 
-You're now building your website from scratch, so the customization are endless. But for the purposes of this tutorial we're gonna stick closely to the template and just make some basic changes.
+You're now building your website from scratch, so the customizations are endless. But for the purposes of this tutorial, we're gonna stick closely to the template and just make some basic changes.
     
-Let's start with the fundamentals of how pages are constructed. Within the `layouts` directory are the HTML templates; each file determines how aspects of your page will look. The HTML code that produces the title and summary for your homepage is in [layouts/index.html](https://github.com/nodejh/hugo-theme-mini/blob/master/layouts/index.html#L8).
+Let's start with the fundamentals of how pages are constructed. Within the `layouts` directory are HTML templates; each file determines how aspects of your page will look. The HTML code that produces the title and summary for your homepage is in [layouts/index.html](https://github.com/nodejh/hugo-theme-mini/blob/master/layouts/index.html#L8).
     
 The parameters `Title` and `Params.Bio` are the variables that the HTML file is using to build your site.
 ```
@@ -133,7 +133,7 @@ The code that produces the image on your home page is also in [layouts/partials/
         <a href="{{ .Site.Params.avatarLink }}">
           <img class="avatar" alt="avatar" src="{{ "/images/avatar.png" | relURL }}" />
 ```
-The static directory is where you store the images you want to you. This particular code is looking for a file name `avatar.png` within the directory `static/images/`. So lets initialize this folder structure then download this [sample image from my github](https://raw.githubusercontent.com/wkye/personal-website/main/static/images/personal-website/sample_avatar.png) and copy it to your new `/static/images/` directory.    
+The static directory is where you store the images you want to you. This particular code is looking for a file name `avatar.png` within the directory `static/images/`. So let's initialize this folder structure then download this [sample image from my github](https://raw.githubusercontent.com/wkye/personal-website/main/static/images/personal-website/sample_avatar.png) and copy it to your new `/static/images/` directory.    
 ```
 # make a new images directory under static
 mkdir static/images/
@@ -211,10 +211,36 @@ The following HTML `<h1>`—`<h6>` elements represent six levels of section head
 ##### H5
 ###### H6            
 ```
-Again, everything between the three dashes are metadata. And the content above `<!--more-->` is what will show up as a precursor for the blog post and everything below that will be the actual content seen when opening up the blog. 
+Again, everything between the three dashes is metadata. And the content above `<!--more-->` is what will show up as a precursor for the blog post and everything below that will be the actual content seen when opening up the blog. 
 {{<figure src="/images/personal-website/post-example.png"width="600">}}            
             
-# Advanced
+# Advanced Customizations
+            
+The out-of-the-box template for hugo-theme-mini offers the bulk of what you need for a blog-based website. But let's say you want to add some of your professional handles (like Linkedin or Github) to the top of your page. In [layouts/partials/profile.html](https://github.com/wkye/personal-website/blob/main/layouts/partials/profile.html#L14) you can add HTML code for these handles:
+            
+```
+<h1>{{ .Site.Title }}</h1>
+
+<nav class="social-heading">
+  {{ if .Site.Params.linkedin }}
+    <a target="_blank" href="{{ .Site.Params.linkedin }}">LinkedIn</a>
+  {{ end}}
+  {{ if .Site.Params.github }}
+    <a target="_blank" href="{{ .Site.Params.github }}">| GitHub</a>
+  {{ end}}
+  {{ if .Site.Params.twitter }}
+    <a target="_blank" href="{{ .Site.Params.twitter }}">| Twitter</a>
+  {{ end}}
+</nav>            
+```  
+
+This is one example of many different customizations you can add to your website as you become more proficient in HTML.
+            
+# Summary
+            
+Creating a tutorial on how to create a website was harder than I thought:sweat_smile:. I see why there aren't many resources out there.
+            
+But as always, if you have any questions, feedback, or just want to connect, don't hesitate to reach out!
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
 
