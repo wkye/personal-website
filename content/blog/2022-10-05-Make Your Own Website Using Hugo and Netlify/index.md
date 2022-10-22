@@ -104,7 +104,7 @@ hugo server
 
 You're now building your website from scratch, so the customization are endless. But for the purposes of this tutorial we're gonna stick closely to the template and just make some basic changes.
     
-Let's start with the basic of how pages are constructed. Within the `layouts` directory are the basic HTML templates; each file determines how aspects of your page will look. The HTML code that produces the title and summary for your homepage is in [layouts/index.html](https://github.com/nodejh/hugo-theme-mini/blob/master/layouts/index.html#L8).
+Let's start with the fundamentals of how pages are constructed. Within the `layouts` directory are the HTML templates; each file determines how aspects of your page will look. The HTML code that produces the title and summary for your homepage is in [layouts/index.html](https://github.com/nodejh/hugo-theme-mini/blob/master/layouts/index.html#L8).
     
 The parameters `Title` and `Params.Bio` are the variables that the HTML file is using to build your site.
 ```
@@ -126,7 +126,7 @@ theme = 'hugo-theme-mini'
 
 ```
 
-The code that produces the image on your home page is also in[layouts/partials/profile.html](https://github.com/wkye/personal-website/blob/main/themes/hugo-theme-mini/layouts/partials/profile.html#L10)"
+The code that produces the image on your home page is also in [layouts/partials/profile.html](https://github.com/wkye/personal-website/blob/main/themes/hugo-theme-mini/layouts/partials/profile.html#L10)"
 ```
 <header class="profile">
     {{ if .Site.Params.avatarLink }}
@@ -155,23 +155,65 @@ In [layouts/partials/navigation.html](https://github.com/wkye/personal-website/b
 <a href="{{ "/about" | relURL }}">{{ with .Site.Params.about }}{{ . }}{{ else }}{{ i18n "about" }}{{ end }}</a>
 ```
           
-Create a `_index.md` file under the subdirectory /content/about` then open the file
+Create a `_index.md` file under the `subdirectory /content/about` then open the file
 ```
 mkdir content/about && touch content/about/_index.md
 vim content/about/_index.md
 ```
-This `/about/_index.md` page will represent what you will see under your about page. Let's add some content
+This `/about/_index.md`\` page will represent what you will see under your about page. Let's add some content
 
 ```
 ---
 title = "About"
 description = "Description about file"
-date = "2019-02-28"
+date = "2022-10-11"
 author = "Your Name"
 ---
 
 The picture in the avatar is from the Hayao Miyazaki musuem in LA. Highly recommend!
 ```
+            
+{{<figure src="/images/personal-website/about-me-example.png"
+          width="600">}}
+
+# Creating Posts
+
+To create posts, initialize as `md` file in `content/posts`. All new `md` files will show up as new posts. So for example, let's create a post named `markdown-syntax.md` where we go overview how to write markdown files.
+            
+```
+# Create a new directory with a markdown-syntax file
+mkdir content/posts && touch content/posts/markdown-syntax.md
+# Update the contents of the file
+vim content/about/markdown-syntax.md
+```
+
+In `markdown-syntax.md` input the following
+            
+``` 
+---
+author = "Your Name"
+title = "Markdown Syntax Guide"
+date = "2022-10-11"
+description = "Sample article showcasing basic Markdown syntax and formatting for HTML" 
+---
+
+This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
+<!--more-->
+
+## Headings
+
+The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6            
+```
+Again, everything between the three dashes are metadata. And the content above `<!--more-->` is what will show up as a precursor for the blog post and everything below that will be the actual content seen when opening up the blog. 
+{{<figure src="/images/personal-website/post-example.png"width="600">}}            
+            
 # Advanced
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
