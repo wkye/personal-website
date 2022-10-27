@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode | default "en" }}">
   <head>
+    {{ if .Site.Params.enableGoogleAnalytics }}
+    {{ partial "analytics-gtag.html" . }}
+    {{ end }}
     <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
 
     {{ partial "head.html" . }}
