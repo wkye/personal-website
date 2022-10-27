@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = 'William Kye'
 theme = 'hugo-theme-mini'
 enableEmoji = true
+googleAnalytics = 'G-L9HXTGVN2C'
 
 [markup]
   [markup.highlight]
@@ -25,6 +26,7 @@ enableEmoji = true
     github = "https://github.com/wkye"
     linkedin = "https://www.linkedin.com/in/william-kye-33251a114/"
     twitter = "https://twitter.com/William_Kye"
+    enableGoogleAnalytics = "true"
 
 [permalinks]
   posts = "/blog/:title/"
