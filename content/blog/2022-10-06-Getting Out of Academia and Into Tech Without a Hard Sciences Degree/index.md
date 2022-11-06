@@ -12,7 +12,7 @@ title: "Getting Out of Academia and into Tech Without a Hard Sciences Degree"
 
 More and more people are flocking to the high-paying, flexible, and engaging work that the technology space has to offer. And with some of the highest training from the sharpest minds in their fields, the transition seems almost natural for academics. Almost. Tech is lauded as being a non-credentialed space - it doesn't care about where you went to school or what previous roles you've had. While this is true to an extent, it is more true for some fields than others. Transitioning from a physicist to a machine learning engineer is a story I've heard a million times. But what about someone with a social science Ph.D. or a humanity degree?
 
-I left my Ph.D. program in sociology from the University of Notre Dame in 2017 without even finishing my degree. Today I am working as a data scientist at a tech company - in retrospect, a career much better suited for me personally. I want to use this post as an opportunity to share my thoughts on how my transition went and give a glimpse into a more unusual transition into a tech career.
+I left my Ph.D. program in sociology from the University of Notre Dame in 2017 without finishing my Doctorate. Today I am working as a data scientist at a tech company - in retrospect, a career much better suited for me personally. I want to use this post as an opportunity to share my thoughts on how my transition went and give a glimpse into a more unusual path into a tech career.
 <!--more-->
 
 # Why I Left Academia
@@ -21,15 +21,15 @@ I left my Ph.D. program in sociology from the University of Notre Dame in 2017 w
 width="600"
 caption="I'm still the face of ND sociology (as of Oct 2022)" >}}
 
-I want to say upfront that I loved my time at Notre Dame (Go Irish :football:). I had some of the greatest professors and mentors. But it just wasn't for me.
+I want to say upfront that I loved my time at Notre Dame (Go Irish :football:). I had some of the greatest professors and mentors I could ask for, but it just wasn't for me.
     
-The initial draw of why I entered a Ph.D. program, was the research. I was fascinated with why people behaved the way they did, particularly from a quantitative lense. And my time in academia cultivated those skills. [Jeffrey Wooldridge's Econometrics textbook]((https://www.amazon.com/Introductory-Econometrics-Modern-Approach-Economics/dp/1111531048)) remains the foundation of my statistics. And my thesis was my first real exposure to collecting, cleaning, and analyzing large datasets (my dissertation proposal was around using census data to predict neighborhood gentrification - don't ask me more than that cause I don't remember much more...). But there is SO much more to academia than just research. Between the politics of the department, the constant pressure to come up with something new and innovative (even if you're not interested in it), and the looming fact that there is only a tiny pool of tenure-track jobs available after (if) you graduate, it left me feeling disillusioned and disenchanted with academia.
+The initial draw of why I entered a Ph.D. program was the research. I was fascinated with why people behaved the way they did, particularly from a quantitative lense. And my time in academia cultivated those skills. [Jeffrey Wooldridge's Econometrics textbook]((https://www.amazon.com/Introductory-Econometrics-Modern-Approach-Economics/dp/1111531048)) remains the foundation of my statistics and my research was my first real exposure to collecting, cleaning, and analyzing large datasets (my dissertation proposal was around using census data to predict neighborhood gentrification - don't ask me more than that cause I don't remember much more...). But there is SO much more to academia than just research. Between the politics of the department, the constant pressure to come up with something new and innovative (even if you're not interested in it), and the looming fact that there is only a tiny pool of tenure-track jobs available after you graduate, it left me feeling disillusioned and disenchanted with academia.
     
 I loved research, but surely there must be a way to do it without the pressure of grants, publications, and all the other political bullshit.
 
 # Less of a Transition More of a Free Fall
     
-After mulling it over, I decided to leave my Ph.D. program. I thought to myself "I have Ph.D. training from a prestigious institution like Notre Dame, I should be an attractive candidate in the tech space". And I wasn't completely incorrect.
+After mulling it over, I decided to leave my Ph.D. program. I thought to myself "I have advanced training| from a prestigious institution like Notre Dame, I should be an attractive candidate in the tech space". And I wasn't completely incorrect.
 - I knew how to do robust quantitative research.
 - I had a strong statistical base, particularly in inference (regressions, significance testing, etc.).
 - I knew the basics of coding (initially trained in Stata, but had learned R by the time I left ND).
@@ -39,8 +39,10 @@ At the same time, I also
 - Had a 3-page CV.
 - Wore a suit to my first interview.
 
-You get the picture, a Ph.D. prepares you to be highly trained in a very niche field. It does not train you to pass an HR screening or a take-home test. That's not to say there aren't skills you learned that aren't highly extensible to the industry, but it takes some refinement.
+You get the picture, a Ph.D. prepares you to be highly trained in a very niche field. It does not train you to pass an HR screening or a take-home test. That's not to say there aren't skills you learned that can't be highly extensible to the industry, but it takes some refinement.
 This is true of anyone transitioning from academia, but it is doubly true if you have a degree in one of the less common fields (e.g. social sciences, humanities).
+
+# How Common is "Sociology" in Job Postings vs. "Mathematics" and Other Hard Science Degree   
     
 Below is a script I wrote to query the Google Careers Search API for data science job titles and descriptions (I hid the code in custom functions in my [custom_function.py](https://github.com/wkye/leaving-academia-for-tech/blob/main/custom_functions.py) to keep the blog more readible). I use this data to see how often different educational fields comes up as a search term in data science job postings.
 
@@ -59,12 +61,13 @@ import custom_functions
 
 with open('config.yaml', 'r') as file: keys = yaml.safe_load(file)
 # query google 
-combined_queries = custom_functions.query_google_jobs(q = 'data', 
-                                                      location = 'New York, New York', 
-                                                      api_key = keys['api_key'], 
+combined_queries = custom_functions.query_google_jobs(q = 'data', # query search term
+                                                      location = 'New York, New York', # location of search 
+                                                      api_key = keys['api_key'], # API key to hit google search
                                                       engine = 'google_jobs',
-                                                      chips = 'job_family_1:data scientist',
-                                                      n_search = 100)
+                                                      chips = 'job_family_1:data scientist', # family of jobs to look for
+                                                      n_search = 100 # number of searches
+                                                     )
 # clean results for querying google
 jobs_df = custom_functions.clean_google_jobs_query(combined_queries)
 ```
@@ -118,7 +121,8 @@ pprint.pprint(combined_queries[0]['description'][0:500])
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
 
-You can see here that something like **mathematics or economics appears in data science job postings nearly 30%** of the time. In contrast, **sociology only appeared in 1% of data science job descriptions**... :cry:
+I queried 100s of jobs, **mathematics or economics appears in data science job postings nearly 30% In contrast, sociology only appeared in 1% of data science job descriptions** :cry:
+
 
 This is a simple, yet powerful, example of how coming out of academia with a non-computer or hard science training drastically shapes how the job market views you.
 
