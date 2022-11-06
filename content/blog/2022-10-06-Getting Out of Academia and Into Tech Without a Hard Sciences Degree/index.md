@@ -42,7 +42,7 @@ At the same time, I also
 You get the picture, a Ph.D. prepares you to be highly trained in a very niche field. It does not train you to pass an HR screening or a take-home test. That's not to say there aren't skills you learned that aren't highly extensible to the industry, but it takes some refinement.
 This is true of anyone transitioning from academia, but it is doubly true if you have a degree in one of the less common fields (e.g. social sciences, humanities).
     
-Below is a script I wrote to query the Google Careers Search API for data science job titles and descriptions (I hid the code in custom functions in my [custom_function.py](LINK) to keep the blog more readible). I use this data to see how often different educational fields comes up as a search term in data science job postings.
+Below is a script I wrote to query the Google Careers Search API for data science job titles and descriptions (I hid the code in custom functions in my [custom_function.py](https://github.com/wkye/leaving-academia-for-tech/blob/main/custom_functions.py) to keep the blog more readible). I use this data to see how often different educational fields comes up as a search term in data science job postings.
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
 
@@ -51,9 +51,10 @@ Below is a script I wrote to query the Google Careers Search API for data scienc
 
 ```python
 import yaml
+import pprint
 import pandas as pd
 from serpapi import GoogleSearch
-# hyperlink to github page
+# https://github.com/wkye/leaving-academia-for-tech/blob/main/custom_functions.py
 import custom_functions
 
 with open('config.yaml', 'r') as file: keys = yaml.safe_load(file)
@@ -92,81 +93,27 @@ Here is what a sample data science job description looks like in the data:
 {{% jupyter_input_start %}}
 
 ```python
-print(jobs_df.iloc[0][['title','company_name']])
-print(combined_queries[0]['description'])
+pprint.pprint(jobs_df.iloc[0][['title','company_name']])
+pprint.pprint(combined_queries[0]['description'][0:500])
 ```
 
 {{% jupyter_input_end %}}
 
-    title           Data Scientist, Economics
-    company_name                      Walmart
+    title           Data Scientist II
+    company_name               Radian
     Name: 0, dtype: object
-    Position Summary...
-    
-    What you'll do...
-    
-    Data Strategy: Requires knowledge of understanding of business value and relevance of data and data enabled insights / decisions; Appropriate application and understanding of data ecosystem including Data Management, Data Quality Standards and Data Governance, Accessibility, Storage and Scalability, etc.; Understanding of the methods and applications that unlock the monetary value of data assets. To understand, articulate, and apply principles of the defined strategy to routine business problems that involve a single function.
-    
-    Analytical Modeling: Requires knowledge of feature relevance and selection; Exploratory data analysis methods and techniques; Advanced statistical methods and best-practice advanced modelling techniques (e.g., graphical models, Bayesian inference, basic level of NLP, Vision, neural networks, SVM, Random Forest etc.); Multivariate calculus; Statistical models behind standard ML models; Advanced excel techniques and Programming languages like R/Python; Basic classical optimization techniques (e.g., Newton-Rapson methods, Gradient descent); Numerical methods of optimization (e.g. Linear Programming, Integer Programming, Quadratic Programming, etc.) To select the analytical modeling technique most suitable for the structured, complex data and develops custom analytical models. Conduct exploratory data analysis activities (for example, basic statistical analysis, hypothesis testing, statistical inferences) on available data. Define and finalize features based on model responses and introduces new or revised features to enhance the analysis and outcomes. Identify the dimensions of the experiment, finalize the design, test hypotheses, and conduct the experiment. Perform trend and cluster analysis on data to answer practical business problems and provide recommendations and key insights to the business. Mentor and guide junior associates on basic modeling and analytics techniques to solve complex problems.
-    
-    Model Deployment and Scaling: Requires knowledge of impact of variables and features on model performance; understanding of servers, model formats to store models. To support efforts to ensure that analytical models and techniques used can be deployed into production. Support evaluation of the analytical model. Support the scalability and sustainability of analytical models.
-    
-    Code Development and Testing: Requires knowledge of coding languages like SQL, Java, C++, Python and others; Testing methods such as static, dynamic, software composition analysis, manual penetration testing and others; Business, domain understanding. To write code to develop the required solution and application features by using the recommended programming language and leveraging business, technical, and data requirements. Test the code using the recommended testing approach.
-    
-    Tech. Problem Formulation: Requires knowledge of Analytics/big data analytics / automation techniques and methods; Business understanding; Precedence and use cases; Business requirements and insights. To translate/ co-own business problems within one's discipline to data related or mathematical solutions. Identify appropriate methods/tools to be leveraged to provide a solution for the problem. Share use cases and gives examples to demonstrate how the method would solve the business problem.
-    
-    Understanding Business Context: Requires knowledge of Industry and environmental factors; Common business vernacular; Business practices across two or more domains such as product, finance, marketing, sales, technology, business systems, and human resources and in-depth knowledge of related practices; Directly relevant business metrics and business areas. To Support the development of business cases and recommendations. Drive delivery of project activity and tasks assigned by others. Support process updates and changes. Support, under guidance, in solving business issues.
-    
-    Data Source Identification: Requires knowledge of Functional business domain and scenarios; Categories of data and where it is held; Business data requirements; Database technologies and distributed datastores (e.g. SQL, NoSQL); Data Quality; Existing business systems and processes, including the key drivers and measures of success. To Understand the appropriate data set required to develop simple models by developing initial drafts. Support the identification of the most suitable source for data Maintains awareness of data quality.
-    
-    Model Assessment and Validation: Requires knowledge of model fit testing, tuning, and validation techniques (e.g., Chi square, ROC curve, root mean square error etc.); Impact of variables and features on model performance To support model fit testing and statistical inferences to evaluate performance. Assess the impact of variables and features on model performance.
-    
-    Data Visualization: Requires knowledge of Visualization guidelines and best practices for complex data types; Multiple data visualization tools (for example, Python, R libraries, GGplot, Matplotlib, Ploty, Tableau, PowerBI etc.); Advanced visualization techniques/ tools; Multiple story plots and structures (OABCDE); Communication & influencing technique; Emotional intelligence. To generate appropriate graphical representations of data and model outcomes under guidance. Support the understanding of customer requirements and design data representations for simple data sets; Present to and influence the team using the appropriate data visualization frameworks and convey messages through basic business understanding.
-    
-    Demonstrates up-to-date expertise and applies this to the development, execution, and improvement of action plans by providing expert advice and guidance to others in the application of information and best practices; supporting and aligning efforts to meet customer and business needs; and building commitment for perspectives and rationales.
-    
-    Provides and supports the implementation of business solutions by building relationships and partnerships with key stakeholders; identifying business needs; determining and carrying out necessary processes and practices; monitoring progress and results; recognizing and capitalizing on improvement opportunities; and adapting to competing demands, organizational changes, and new responsibilities.
-    
-    Models compliance with company policies and procedures and supports company mission, values, and standards of ethics and integrity by incorporating these into the development and implementation of business plans; using the Open Door Policy; and demonstrating and assisting others with how to apply these in executing business processes and practices.
-    
-    Live our Values
-    Culture Champion
-    • Models the Walmart values to foster our culture; holds oneself and others accountable; and supports Walmart’s commitment to communities, social justice, corporate social responsibility, and sustainability; maintains and promotes the highest standards of integrity, ethics and compliance.
-    Servant Leadership
-    • Acts as an altruistic servant leader and is consistently humble, self-aware, honest, and transparent.
-    Embrace Change
-    Curiosity & Courage
-    • Demonstrates curiosity and a growth mindset; fosters an environment that supports learning, innovation, and intelligent risk-taking; and exhibits resilience in the face of setbacks.
-    Digital Transformation & Change
-    • Seeks and implements continuous improvements and encourages the team to leverage new digital tools and ways of working.
-    Deliver for the Customer
-    Customer Focus
-    • Delivers expected business results while putting the customer first and consistently applying an omni-merchant mindset and the EDLP and EDLC business models to all plans.
-    Strategic Thinking
-    • Adopts a holistic perspective that considers data, analytics, customer insights, and different parts of the business when making plans and shaping the team’s strategy.
-    Focus on our Associates
-    
-    Diversity, Equity & Inclusion
-    • Embraces diversity in all its forms and actively supports diversity of ideas and perspectives, as well as diversity goal programs.
-    Collaboration & Influence
-    • Builds strong and trusting relationships with team members and business partners; works collaboratively and cross-functionally to achieve objectives; and communicates with energy and positivity to motivate, influence, and inspire commitment and action.
-    Talent Management
-    • Contributes to an environment allowing everyone to bring their best selves to work, demonstrates engagement and commitment to the team, and recognizes others’ contributions and accomplishments.
-    
-    Minimum Qualifications...
-    
-    Outlined below are the required minimum qualifications for this position. If none are listed, there are no minimum qualifications.
-    
-    Option 1: Bachelors degree in Statistics, Economics, Analytics, Mathematics, Computer Science, Information Technology or related field and 2 years' experience in an analytics or related field. Option 2: Masters degree in Statistics, Economics, Analytics, Mathematics, Computer Science, Information Technology or related field. Option 3: 4 years' experience in an analytics or related field.
-    
-    Preferred Qualifications...
-    
-    Outlined below are the optional preferred qualifications for this position. If none are listed, there are no preferred qualifications.
-    
-    Data science, machine learning, optimization models, Master’s degree in Machine Learning, Computer Science, Information Technology, Operations Research, Statistics, Applied Mathematics, Econometrics, Successful completion of one or more assessments in Python, Spark, Scala, or R, Using open source frameworks (for example, scikit learn, tensorflow, torch)
-    
-    Primary Location...
-    250 Hudson St, NEW YORK, NY 10013-1006, United States of America
+    ('See yourself at Radian? We see you here too.\n'
+     '\n'
+     'At Radian, we see you. For the person you are and the potential you hold. '
+     'That’s why we’ve embraced a new way of working that lets our people across '
+     'the country be themselves, be their best and be their boldest. Because when '
+     'each of us is truly seen, each of us gives our best – and at Radian, we’ll '
+     'give you our best right back...\n'
+     '\n'
+     'See Yourself as a Data Scientist II\n'
+     '\n'
+     "The Data Scientist II's primary function is estimating, validating, "
+     'monitoring and i')
 
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
@@ -233,13 +180,13 @@ Basic git hygene is good to know. Depending on whether you want to lean more ana
 
 Data science is a fun field _because_ there is so much to learn. So don't be intimated, keep learning little by little!
 
-# Learning to walk before you can run (a fancy python ML script)
+# Learning to walk before you can run
 
 {{<figure src="/images/leaving-academia/willie_today_show.png"
 width="600"
 caption="Me on the Today Show while at Dia. Mama we made it!" >}}
     
-After much toiling, I landed my first tech job as a statistical analyst at [Dia&Co](https://www.dia.com/). You may think you need to know how to be a data scientist or analyst __before__ you land your first job (and maybe __you__ do), but for me that wasn't the case (*cue Jon Snow you know nothing*). At Dia, I was on a growth focused team that comprised of machine learning engineers, other analysts, a product manager and product designers. I learned that everything in product is somehow related to a funnel, you always lead with the summary (and definetly not the methodology), most people don't care about what statistical assumptions your model took into consideration, and that you don't email code to be reviewed, you tag your reviewer on PR. (:sweat_smile: real story).
+After much toiling, I landed my first tech job as a statistical analyst at [Dia&Co](https://www.dia.com/). You may think you need to know how to be a data scientist or analyst __before__ you land your first job (and maybe __you__ do), but for me that wasn't the case. At Dia, I was on a growth focused team that comprised of machine learning engineers, other analysts, a product manager and product designers. I learned that everything in product is somehow related to a funnel, you always lead with the summary (and definetly not the methodology), most people don't care about what statistical assumptions your model took into consideration, and that you don't email code to be reviewed, you tag your reviewer on PR. (:sweat_smile: real story).
     
 I was lucky enough to have wonderful leads that took the time to mentor me and show me how to do things (rather than just do it themselves). I never wrote any production level ML code or some fancy Python package, but I was able to see the behind the scene process of how recommendation systems were build and data systms were architectured. I highly recommend that type of experience.
     
