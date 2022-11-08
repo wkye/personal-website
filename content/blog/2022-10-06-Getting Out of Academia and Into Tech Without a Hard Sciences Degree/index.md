@@ -123,7 +123,6 @@ pprint.pprint(combined_queries[0]['description'][0:500])
 
 I queried 100s of jobs, **mathematics or economics appears in data science job postings nearly 30% In contrast, sociology only appeared in 1% of data science job descriptions** :cry:
 
-
 This is a simple, yet powerful, example of how coming out of academia with a non-computer or hard science training drastically shapes how the job market views you.
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
@@ -150,7 +149,7 @@ custom_functions.create_job_search_word_figure(jobs_df, search_terms, display_fi
 
 I knew I wanted to get into data science, but I had no idea how. After showing up to an interview in a full on suit (that I also wore at my brothers wedding... cause I was a poor ex-grad student), I realized I needed to re-evaluate my options and I ended up attending 12 week data science bootcamp.
 
-My overall takeaway from attending a bootcamp was that it **helped me my get my foot in the tech industry but it certaintly wasn't worth the hefty price tag** Anyone's experience attending a bootcamp will be highly contingent on what type of background and skillset they are alreading coming in with. But the reality of a data science bootcamp is that you can't learn machine learning or statistical inference in 12 weeks. It should be more viewed as an surface level overview of what exist out there. 
+My overall takeaway from attending a bootcamp was that it **helped me my get my foot in the tech industry but it certaintly wasn't worth the hefty price tag** Anyone's experience attending a bootcamp will be highly contingent on what type of background and skillset they are already coming in with. But the reality of a data science bootcamp is that you can't learn machine learning or statistical inference in 12 weeks. It should be more viewed as an surface level overview of what exist out there. 
 
 For me, the biggest benefits of attending a bootcamp were more exterior facing. Learning how to craft a resume, knowing what buzzwords to say in an HR screening, finding out that no one cares about where you've had publications, etc. There are plenty of resources out there for you to learn this on your own without having to commit thousands of dollars. I'll link several concepts and resources that I think someone can learn on there own.
  
@@ -165,22 +164,22 @@ There are countless [free data science resumes out](https://towardsdatascience.c
 ##### STATISTICS
 
 Your approach to learning statistics will be highly variable on what level of statistics you already know. I found the following resources to be helpful:
-- [Introductory Econometrics Modern Approach](https://www.amazon.com/Introductory-Econometrics-Modern-Approach-Economics/dp/1111531048): If you have a more traditional training and a strong base, then this book might be helpful. Heavy on theory without going to heavy into the raw math.
-- [Introductory_Statistics_with_R](https://www.google.com/books/edition/Introductory_Statistics_with_R/YI0kT8cuiVUC?hl=en&gbpv=1&printsec=frontcover&bsq=Introductory%20Statistics%20with%20R%20(Statistics%20and%20Computing)): Really good beginners course on machine learning. Code is in R, but concepts are still helpful
+- [Introductory Econometrics Modern Approach](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf): If you have a more traditional training and a strong base, then this book might be helpful. Good overview of theory without going to heavy into the raw math.
+- [An Introduction to Statistical Learning with Applications in R](https://www.google.com/books/edition/Introductory_Statistics_with_R/YI0kT8cuiVUC?hl=en&gbpv=1&printsec=frontcover&bsq=Introductory%20Statistics%20with%20R%20(Statistics%20and%20Computing)): Really good beginners course on machine learning. Code is in R, but concepts are still helpful.
 - [Khan Academy](https://www.khanacademy.org/math/probability): Probability and basic statistics will more likely than not be part of your interview process. Good to brush up here.
 - [Coursera Machine Learning](https://www.coursera.org/learn/machine-learning): Highly regarded Andrew Ng machine learning course. Definetely recommend.
 
 ##### SQL
 
-SQL is an essential skill for anyone who wants to work in data, but it can be hard to learn because its a little bit of a chicken and an egg problem. Typically you need database access to practice SQL queries and you need to know SQL to get a role that has access to a database. That being said there are still plenty of resources out there to learn the core concepts of [SQL](https://www.w3schools.com/sql/)
+SQL is an essential skill for anyone who wants to work in data, but it can be hard to learn because its a little bit of a chicken and an egg problem. Typically you need database access to practice SQL queries and you need to know SQL to get a role that has access to a database. That being said there are still plenty of resources out there to learn the core concepts of [SQL](https://www.w3schools.com/sql/).
 
 ##### PYTHON
 
-I strongly recommend [learning python](https://developers.google.com/edu/python/?hl=en) over R. All my blog posts are written and entirely reproducable in Python. Python can be intimidating because there of varying level of expertise, but I would say to start, focus on learning Pandas and just basic python functions (like imports and functions). Stay away from object oriented programming and more advanced things. Its just overkill for what a beginner should know. I always found looking at example Python project to be helpful. Check out my [GitHub page](https://github.com/wkye).
+I strongly recommend [learning python](https://developers.google.com/edu/python/?hl=en) over R. All my blog posts are written and entirely reproducable in Python. Python can be intimidating because there of varying level of expertise, but I would say to start, focus on learning Pandas and just basic python functions (like imports and functions). Stay away from object oriented programming and more advanced things. Its just overkill for what a beginner should know. I always found looking at example Python projects to be helpful. Check out my [GitHub page](https://github.com/wkye).
 
 ##### GITHUB
 
-Basic git hygene is good to know. Depending on whether you want to lean more analyst versus data engineering will influence to what extent you need to learn git
+Basic git hygene is good to know. Depending on whether you want to lean more analyst versus data engineering will influence to what extent you need to learn git.
 
 Data science is a fun field _because_ there is so much to learn. So don't be intimated, keep learning little by little!
 
@@ -190,21 +189,21 @@ Data science is a fun field _because_ there is so much to learn. So don't be int
 width="600"
 caption="Me on the Today Show while at Dia. Mama we made it!" >}}
     
-After much toiling, I landed my first tech job as a statistical analyst at [Dia&Co](https://www.dia.com/). You may think you need to know how to be a data scientist or analyst __before__ you land your first job (and maybe __you__ do), but for me that wasn't the case. At Dia, I was on a growth focused team that comprised of machine learning engineers, other analysts, a product manager and product designers. I learned that everything in product is somehow related to a funnel, you always lead with the summary (and definetly not the methodology), most people don't care about what statistical assumptions your model took into consideration, and that you don't email code to be reviewed, you tag your reviewer on PR. (:sweat_smile: real story).
+After much toiling, I landed my first tech job as a statistical analyst at [Dia&Co](https://www.dia.com/). You may think you need to know how to be a data scientist or analyst __before__ you land your first job (and maybe __you__ do), but for me that wasn't the case. At Dia, I was on a growth focused team that comprised of machine learning engineers, other analysts, a product manager and product designers. I learned that everything in product is somehow related to a funnel, you always lead with the summary (and definetly not the methodology), and most people don't care about what statistical assumptions your model took into consideration.
     
-I was lucky enough to have wonderful leads that took the time to mentor me and show me how to do things (rather than just do it themselves). I never wrote any production level ML code or some fancy Python package, but I was able to see the behind the scene process of how recommendation systems were build and data systms were architectured. I highly recommend that type of experience.
+I was lucky enough to have wonderful leads that took the time to mentor me and show me how to do things (rather than just do it themselves). I never wrote any production level ML code or some fancy Python package, but I was able to see the behind the scene process of how recommendation systems were built and data systms were architectured. I highly recommend that type of experience.
     
-At this point, I had drunk the metaphorical kool-aid and wanted to get deeper into tech. Instead of getting my feet wet, I jumped in head first. I landed a remote job as a data analyst at [CircleCI](https://circleci.com/), one of the leading companies in CI/CD. If you don't know what CI/CD is, join my parents, who still think CircleCI is a gas station company. But going from a data team of 30 to a data team of 5, I was now able to build pipelines and tools from scatch. There was surely a lot of long nights and painful failures, but the saying holds true: Fail quickly and learn quicker.
+At this point, I had drunk the metaphorical kool-aid and wanted to get deeper into tech. Instead of getting my feet wet, I jumped in head first. I landed a remote job as a data analyst at [CircleCI](https://circleci.com/), one of the leading companies in CI/CD. Going from a data team of 30 to a data team of 5, I was now able to build pipelines and tools from scatch. There was surely a lot of long nights and painful failures, but the saying holds true: Fail quickly and learn quicker.
     
-Today, I'm at [clockwise](https://www.getclockwise.com/), an AI driven calendar manegment tool. I, literally, was the 2nd data hire on the team and have really been building everything from scratch. Somedays I'm on the finance team building models to forecast revenue, others I'm on the growth team identifying leaks in our monetization funnel. I'm a data engineer debugging why our fivetran to snowflake integration is down, and I'm also a software engineer finding front-end events to optimize our onboarding experience. The hats are many, and the snacks I get sent are even more plentiful (still fully remote at this point).
+Today, I'm at [clockwise](https://www.getclockwise.com/), an AI driven calendar manegment tool. I, literally, was the 2nd data hire on the team and have really been building everything from scratch. Somedays I'm on the finance team building models to forecast revenue, others I'm on the growth team identifying leaks in our monetization funnel. I'm a data engineer debugging why our fivetran to snowflake integration is down, and I'm also a software engineer finding front-end events to optimize our onboarding experience.
     
-My time in tech has felt like non-stop learning. And in truth, sometimes I feel like I learn something then immediately it becomes antiquated. But I think that is the exciting part of entering the tech data world. If you have an apetite for learning, the as long as you know the right area to focus there are plenty of opportunties out there for you.
+My time in tech has felt like non-stop learning. And in truth, sometimes I feel like I learn something then immediately it becomes antiquated. But I think that is the exciting part of entering the tech data world. If you have an apetite for learning, the as long as you know the right area to focus, there are plenty of opportunties out there for you.
 
 # Takeaway
     
 Breaking the number 1 rule I've learned in industry, I'm putting my summary at the bottom. But the takeaway is that breaking into tech from academia is no easy thing. Particularly if you're coming from a non hard sciences background like me. At the same time, no matter what field you are coming from, if you have a sense of curiosity and a desire to learn, then I believe the core values to succeed are there. Its just a matter of learning where to focus your attention.
     
-I hope that this post gave you a some sort of sense of orientation for how to navigate the tech data space. Leaving academia for tech was not an easy journey, but one I did not regret. No matter what choice you make, good luck on your journey and if there's anyway I can be of help, don't hesitate to reach out! 
+I hope that this post gave you a some sort of sense of orientation for how to navigate the tech data space. Leaving academia for tech was not an easy journey, but one I do not regret. No matter what choice you make, good luck on your journey and if there's anyway I can be of help, don't hesitate to reach out! 
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
 
