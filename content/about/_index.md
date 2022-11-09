@@ -16,4 +16,4 @@ caption="" >}}
 
 Other than data, I got really into running during the pandemic. I ran my first half-marathon in 2022 and am constantly looking for new running routes where I don't have to battle bikers. I am also just generally a curious person and love learning! I'm learning Korean right now (if anyone wants to practice with me let me know!) and learned how to build this very website from scratch!
 
-Whether you're interested in data or just wanna connect follow me on [LinkedIn](https://www.linkedin.com/in/william-kye-33251a114/) or shoot me an email: williamkye93[at]gmail[dot]com.
+Whether you're interested in data or just wanna connect follow me on [LinkedIn](https://www.linkedin.com/in/william-kye-33251a114/) or shoot me an email @ williamkye93[at]gmail[dot]com.
