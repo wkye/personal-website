@@ -9,15 +9,14 @@ tags: ['data-science', 'dev-ops','poetry','pyenv','virtualenv','docker','jupyter
 title: "Reproducibility, Reproducibility, Reproducibility - Data Science"   
 ---
 
-Maybe I'm getting flashbacks of my time in grad school, but I’ve been interested in making my work as replicable as possible while at the same time highly efficient. In the process, in the span of 48 hours, I broke my operating system and had to reset my computer to factory settings about 5 times.
+Maybe I'm getting flashbacks of my time in grad school, but reproducibility has been on my mind - I want to make work as replicable as possible while at the same time not sacrificing efficiency. The result was I had to reset my mac to factory setting about 5 times in a span of 48 hours because I kept breaking my operating system.
 
-But this hit a larger point that I've been trying to drive home: I want to be able to drop and pick up my work whenever and wherever I am. Whether that's picking up an old project or using a different machine, I want my work to be highly portable and interoperable . To that end, this post describes the data science set-up that allows me to work efficiently while maintaining confidence that notebooks and packages can easily be picked up and work on when necessary. Full disclosure, this might read as an onboarding doc… cause another purpose of this post was to create a checklist if I end up breaking my computer again 😓
 
-<!--more-->
+But this hit a larger point that I've been trying to drive home: I want to be able to drop and pick up my work whenever and wherever I am (and no matter how many times I have to reset my computer :grimacing:).<!--more--> Whether that's picking up an old project or using a different machine, I want my work to be highly portable and interoperable . To that end, this post describes the data science set-up that allows me such a workflow. Full disclosure, this might read as an onboarding doc… cause another purpose of this post was to create a checklist if I end up breaking my computer again :sweat_smile:.
 
 # The Problem
 
-The problem is pretty simple - whatever I’m working on today might work, but next week if I update a package for a different project or if I’m using a new computer, how can I ensure that my code will still work? In other words, how can I manufacture a data science setup such that I’m forced to create a self-contained and portable workflow that I can continually iterate upon.
+The problem is pretty simple - whatever I’m working on today might work, but next week if I update a package for a different project or if I’m using a new computer, how can I ensure that my code will still work? In other words, how can I manufacture a data science setup such that I’m forced to create a highly self-contained and portable workflow that I can continually iterate upon.
 
 # Text Editors / IDE
 
@@ -25,7 +24,7 @@ I like to use [Atom](https://atom.io/) as my lightweight editor when I'm doing s
 
 # Github
 
-I use GitHub to maintain all my code and notebook. I have a base folder where I install `Jupyter` more on that later. And then within that directory, I have different repositories for my projects. I use [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)  to connect to GitHub.
+I use GitHub to maintain all my code and notebooks. I have a base folder where I install `Jupyter` (more on that later) and then within that directory, I have different repositories for my projects. I use [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) to connect to GitHub.
 
 ```
 # Create new data directory
@@ -44,7 +43,7 @@ Echo ‘Host *.github.com
 # add SSH private key to ssh agent
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 ```
-Then add SSH key in Github UI
+Then add my SSH key in Github UI.
 ```
 #copy public key
 pbcopy < ~/.ssh/id_ed25519.pub
@@ -109,7 +108,7 @@ Poetry init
 poetry add jupyterlab
 ```
 
-Finally I disable poetry’s virtual environment management functionality and instead manage my virtual environment through `pyenv virutalenv`
+Finally I disable poetry’s virtual environment management functionality and instead manage my virtual environment through `pyenv virutalenv`.
 
 ```
 poetry config virtualenvs.create false
@@ -117,7 +116,7 @@ poetry config virtualenvs.create false
 
 # Virtualenv
 
-I use the pyenv virtualenv (https://github.com/pyenv/pyenv-virtualenv) wrapper to maintain my virtual environments. For every new project I work on, I spin up a new virtual environment. Virtual environments are important so that projects you work on stay independent of one another and dependencies don't get entangled. Moreover, a well coupled virtual environment and package management system (poetry) reduces the barriers to anyone being to pick up and run your code
+I use the pyenv virtualenv (https://github.com/pyenv/pyenv-virtualenv) wrapper to maintain my virtual environments. For every new project I work on, I spin up a new virtual environment. Virtual environments are important so that projects you work on stay independent of one another and dependencies don't get entangled. Moreover, a well coupled virtual environment and package management system (poetry) reduces the barriers to anyone being able to pick up and run your code.
 
 ```
 # install pyenv-virtualenv
@@ -132,7 +131,7 @@ Pyenv local data
 
 # Notebook
 
-Notebooks aren’t good for everything, but they are useful for a lot of things. I use notebooks to write most of my blogs (see nbconvert and example notebook) and to do some quick development. And when/if necessary I elevate my notebook code to a package.
+Notebooks aren’t perfect, but they are useful for a lot of things. I use notebooks to write most of my blogs (see[hugo_nb_exporter](https://github.com/jbandlow/nb_hugo_exporter) and [example blog](https://williamkye.com/blog/leaving-academia/)) and to do some quick development. And when/if necessary I elevate my code from notebook form to a package.
 
 The key for me to be able to work quickly and efficiently is an optimized jupyter setup. Whether I need to switch between projects (and thus virtual environments) to see how I did things in the past or whether I need to quickly update a package, I need a centralized way to do development. I’ve found that leveraging jupyter kernels allows me to do so. I have a base folder where jupyter is installed then I switch between project kernels within the UI to allow me to also easily switch between projects
 
@@ -145,7 +144,8 @@ poetry add jupyterlab-code-formatter
 poetry add black isort
 ```
 
-[image]
+{{<figure src="/images/reproducibility/jupyter-lab-example.png"
+width="600">}}
 
 # Docker
 
@@ -189,4 +189,18 @@ run:
 	wkye/leaving-academia-for-tech
 ```
 
-# Summary 
+# Summary
+
+Thanks for getting this far! He's what we covered in this blog
+
+**Problem**: I needed a way to make my data science work highly portable and easily sharable
+
+**solution**:
+1. Use Github as centralized place to maintain stable code .
+2. Pyenv to allow you to switch between python versions.
+3. One layer below that, use poetry to allow you to manage your package dependencies.
+4. Virtualevn allows you to create virtual environment so that your projects scan maintain dependency separation.
+5. Notebook combined with Ipython kernels allow for quick and efficient switching between environment and notebook within Jupyter.
+6. If you really want an isolated environment to do your data science work, you can use docker.
+
+If you have any questions or feedback please reach out!
