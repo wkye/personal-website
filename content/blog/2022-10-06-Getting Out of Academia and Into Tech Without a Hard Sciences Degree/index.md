@@ -5,7 +5,7 @@ enableEmoji: true
 hasMath: false
 notebook: true
 slug: "leaving-academia"
-tags: ['academia', 'social sciences', 'tech', 'industry', 'data science']
+tags: ['academia', 'social sciences', 'tech', 'industry', 'data science','jupyter']
 title: "Getting Out of Academia and into Tech Without a Hard Sciences Degree"   
 ---
 {{% jupyter_cell_start markdown %}}
@@ -22,13 +22,13 @@ width="600"
 caption="I'm still the face of ND sociology (as of Oct 2022)" >}}
 
 I want to say upfront that I loved my time at Notre Dame (Go Irish :football:). I had some of the greatest professors and mentors I could ask for, but it just wasn't for me.
-    
+
 The initial draw of why I entered a Ph.D. program was the research. I was fascinated with why people behaved the way they did, particularly from a quantitative lense. And my time in academia cultivated those skills. [Jeffrey Wooldridge's Econometrics textbook]((https://www.amazon.com/Introductory-Econometrics-Modern-Approach-Economics/dp/1111531048)) remains the foundation of my statistics and my research was my first real exposure to collecting, cleaning, and analyzing large datasets (my dissertation proposal was around using census data to predict neighborhood gentrification - don't ask me more than that cause I don't remember much more...). But there is SO much more to academia than just research. Between the politics of the department, the constant pressure to come up with something new and innovative (even if you're not interested in it), and the looming fact that there is only a tiny pool of tenure-track jobs available after you graduate, it left me feeling disillusioned and disenchanted with academia.
-    
+
 I loved research, but surely there must be a way to do it without the pressure of grants, publications, and all the other political bullshit.
 
 # Less of a Transition More of a Free Fall
-    
+
 After mulling it over, I decided to leave my Ph.D. program. I thought to myself "I have advanced training| from a prestigious institution like Notre Dame, I should be an attractive candidate in the tech space". And I wasn't completely incorrect.
 - I knew how to do robust quantitative research.
 - I had a strong statistical base, particularly in inference (regressions, significance testing, etc.).
@@ -43,7 +43,7 @@ You get the picture, a Ph.D. prepares you to be highly trained in a very niche f
 This is true of anyone transitioning from academia, but it is doubly true if you have a degree in one of the less common fields (e.g. social sciences, humanities).
 
 # How Common is "Sociology" in Job Postings vs. "Mathematics" and Other Hard Science Degree   
-    
+
 Below is a script I wrote to query the Google Careers Search API for data science job titles and descriptions (I hid the code in custom functions in my [custom_function.py](https://github.com/wkye/leaving-academia-for-tech/blob/main/custom_functions.py) to keep the blog more readible). I use this data to see how often different educational fields comes up as a search term in data science job postings.
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
@@ -60,9 +60,9 @@ from serpapi import GoogleSearch
 import custom_functions
 
 with open('config.yaml', 'r') as file: keys = yaml.safe_load(file)
-# query google 
+# query google
 combined_queries = custom_functions.query_google_jobs(q = 'data', # query search term
-                                                      location = 'New York, New York', # location of search 
+                                                      location = 'New York, New York', # location of search
                                                       api_key = keys['api_key'], # API key to hit google search
                                                       engine = 'google_jobs',
                                                       chips = 'job_family_1:data scientist', # family of jobs to look for
@@ -149,10 +149,10 @@ custom_functions.create_job_search_word_figure(jobs_df, search_terms, display_fi
 
 I knew I wanted to get into data science, but I had no idea how. After showing up to an interview in a full on suit (that I also wore at my brothers wedding... cause I was a poor ex-grad student), I realized I needed to re-evaluate my options and I ended up attending 12 week data science bootcamp.
 
-My overall takeaway from attending a bootcamp was that it **helped me my get my foot in the tech industry but it certaintly wasn't worth the hefty price tag** Anyone's experience attending a bootcamp will be highly contingent on what type of background and skillset they are already coming in with. But the reality of a data science bootcamp is that you can't learn machine learning or statistical inference in 12 weeks. It should be more viewed as an surface level overview of what exist out there. 
+My overall takeaway from attending a bootcamp was that it **helped me my get my foot in the tech industry but it certaintly wasn't worth the hefty price tag** Anyone's experience attending a bootcamp will be highly contingent on what type of background and skillset they are already coming in with. But the reality of a data science bootcamp is that you can't learn machine learning or statistical inference in 12 weeks. It should be more viewed as an surface level overview of what exist out there.
 
 For me, the biggest benefits of attending a bootcamp were more exterior facing. Learning how to craft a resume, knowing what buzzwords to say in an HR screening, finding out that no one cares about where you've had publications, etc. There are plenty of resources out there for you to learn this on your own without having to commit thousands of dollars. I'll link several concepts and resources that I think someone can learn on there own.
- 
+
 ##### RESUME
 
 There are countless [free data science resumes out](https://towardsdatascience.com/how-to-build-a-solid-data-science-and-tech-resume-e899daceb271) there if you search hard enough. A [resume is not a CV](https://www.chronicle.com/article/from-cv-to-ra-suma/)., so keep it one page. Happy to share mine as well if you'd like, just reach out!
@@ -188,22 +188,22 @@ Data science is a fun field _because_ there is so much to learn. So don't be int
 {{<figure src="/images/leaving-academia/willie_today_show.png"
 width="600"
 caption="Me on the Today Show while at Dia. Mama we made it!" >}}
-    
+
 After much toiling, I landed my first tech job as a statistical analyst at [Dia&Co](https://www.dia.com/). You may think you need to know how to be a data scientist or analyst __before__ you land your first job (and maybe __you__ do), but for me that wasn't the case. At Dia, I was on a growth focused team that comprised of machine learning engineers, other analysts, a product manager and product designers. I learned that everything in product is somehow related to a funnel, you always lead with the summary (and definetly not the methodology), and most people don't care about what statistical assumptions your model took into consideration.
-    
+
 I was lucky enough to have wonderful leads that took the time to mentor me and show me how to do things (rather than just do it themselves). I never wrote any production level ML code or some fancy Python package, but I was able to see the behind the scene process of how recommendation systems were built and data systms were architectured. I highly recommend that type of experience.
-    
+
 At this point, I had drunk the metaphorical kool-aid and wanted to get deeper into tech. Instead of getting my feet wet, I jumped in head first. I landed a remote job as a data analyst at [CircleCI](https://circleci.com/), one of the leading companies in CI/CD. Going from a data team of 30 to a data team of 5, I was now able to build pipelines and tools from scatch. There was surely a lot of long nights and painful failures, but the saying holds true: Fail quickly and learn quicker.
-    
+
 Today, I'm at [clockwise](https://www.getclockwise.com/), an AI driven calendar manegment tool. I, literally, was the 2nd data hire on the team and have really been building everything from scratch. Somedays I'm on the finance team building models to forecast revenue, others I'm on the growth team identifying leaks in our monetization funnel. I'm a data engineer debugging why our fivetran to snowflake integration is down, and I'm also a software engineer finding front-end events to optimize our onboarding experience.
-    
+
 My time in tech has felt like non-stop learning. And in truth, sometimes I feel like I learn something then immediately it becomes antiquated. But I think that is the exciting part of entering the tech data world. If you have an apetite for learning, the as long as you know the right area to focus, there are plenty of opportunties out there for you.
 
 # Takeaway
-    
+
 Breaking the number 1 rule I've learned in industry, I'm putting my summary at the bottom. But the takeaway is that breaking into tech from academia is no easy thing. Particularly if you're coming from a non hard sciences background like me. At the same time, no matter what field you are coming from, if you have a sense of curiosity and a desire to learn, then I believe the core values to succeed are there. Its just a matter of learning where to focus your attention.
-    
-I hope that this post gave you a some sort of sense of orientation for how to navigate the tech data space. Leaving academia for tech was not an easy journey, but one I do not regret. No matter what choice you make, good luck on your journey and if there's anyway I can be of help, don't hesitate to reach out! 
+
+I hope that this post gave you a some sort of sense of orientation for how to navigate the tech data space. Leaving academia for tech was not an easy journey, but one I do not regret. No matter what choice you make, good luck on your journey and if there's anyway I can be of help, don't hesitate to reach out!
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
 

@@ -5,7 +5,7 @@ enableEmoji: true
 hasMath: false
 notebook: true
 slug: "website"
-tags: ['engineering', 'jupyter-notebooks']
+tags: ['engineering', 'jupyter']
 title: "Make Your Own Website Using Hugo and Netlify"   
 ---
 {{% jupyter_cell_start markdown %}}
@@ -13,7 +13,7 @@ title: "Make Your Own Website Using Hugo and Netlify"
 <video style="display:block; width:100%; height:auto;" autoplay="" muted="" loop="loop">
     <source src="/videos/personal-website/website.mp4" type="video/mp4">
 </video>
-    
+
 I have no formal training in computer science and would not consider myself an engineer. I do, however, think of myself as someone who "gets the job done". As I have worked in several startups (each subsequent company tends to get smaller :eyes:), I've picked up a scrappy mindset where I love learning new things. And fortunately, these smaller starts up offer the latitude to fail quickly and learn (more?) quickly!
 
 In this post, I will show you the process of how I learned how to make this website!
@@ -21,14 +21,14 @@ In this post, I will show you the process of how I learned how to make this webs
 
 # Online Resources
 
-There were several people who's work I used as a reference to build my own site: 
+There were several people who's work I used as a reference to build my own site:
 - [Ethan Rosenthal](https://github.com/EthanRosenthal/website-source): My former MLE lead at Dia&Co! Built a lot of my stuff on top of the code he had already written. Was a huge help in quickly debugging my site.
 - [Lugo](https://www.youtube.com/watch?v=ZFL09qhKi5I&t=1092s): My initial testing of Hugo was helped by this tutorial.
 - [Design](https://github.com/nodejh/hugo-theme-mini): The design of my website leverages the themes from the hugo-theme-mini repository.
 
 # Getting Started: Hugo
 
-I'm assuming that you have some knowledge of python and git but this is your first foray into hugo and netlify. Let's start with what [Hugo](https://gohugo.io/) is. 
+I'm assuming that you have some knowledge of python and git but this is your first foray into hugo and netlify. Let's start with what [Hugo](https://gohugo.io/) is.
 
 Hugo is built up on Go, making it super fast and responsive. It's abstracted out enough from Go to make it simple for people who don't build websites for a living (like me) but at the same time highly extensible. First install hugo on to your machine:
 ```
@@ -103,9 +103,9 @@ hugo server
 # Customizing your home page
 
 You're now building your website from scratch, so the customizations are endless. But for the purposes of this tutorial, we're gonna stick closely to the template and just make some basic changes.
-    
+
 Let's start with the fundamentals of how pages are constructed. Within the `layouts` directory are HTML templates; each file determines how aspects of your page will look. The HTML code that produces the title and summary for your homepage is in [layouts/index.html](https://github.com/nodejh/hugo-theme-mini/blob/master/layouts/index.html#L8).
-    
+
 The parameters `Title` and `Params.Bio` are the variables that the HTML file is using to build your site.
 ```
 <h1>{{ .Site.Title }}</h1>
@@ -150,11 +150,11 @@ cp sample_avatar.png static/images/avatar.png
 Next, I want to add an about page. To do so, we need to leverage the `content` folder. In Hugo, content is where you put your markdown files, which are the pages of your website. Hugo will generate an HTML file and create a new web directory.
 
 In [layouts/partials/navigation.html](https://github.com/wkye/personal-website/blob/main/themes/hugo-theme-mini/layouts/partials/navigation.html#L7) is where we see the `about` tag referenced in the navigation
-            
+
 ```
 <a href="{{ "/about" | relURL }}">{{ with .Site.Params.about }}{{ . }}{{ else }}{{ i18n "about" }}{{ end }}</a>
 ```
-          
+
 Create a `_index.md` file under the `subdirectory /content/about` then open the file
 ```
 mkdir content/about && touch content/about/_index.md
@@ -172,14 +172,14 @@ author = "Your Name"
 
 The picture in the avatar is from the Hayao Miyazaki musuem in LA. Highly recommend!
 ```
-            
+
 {{<figure src="/images/personal-website/about-me-example.png"
           width="600">}}
 
 # Creating Posts
 
 To create posts, initialize as `md` file in `content/posts`. All new `md` files will show up as new posts. So for example, let's create a post named `markdown-syntax.md` where we go overview how to write markdown files.
-            
+
 ```
 # Create a new directory with a markdown-syntax file
 mkdir content/posts && touch content/posts/markdown-syntax.md
@@ -188,13 +188,13 @@ vim content/about/markdown-syntax.md
 ```
 
 In `markdown-syntax.md` input the following
-            
-``` 
+
+```
 ---
 author = "Your Name"
 title = "Markdown Syntax Guide"
 date = "2022-10-11"
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML" 
+description = "Sample article showcasing basic Markdown syntax and formatting for HTML"
 ---
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
@@ -211,13 +211,13 @@ The following HTML `<h1>`—`<h6>` elements represent six levels of section head
 ##### H5
 ###### H6            
 ```
-Again, everything between the three dashes is metadata. And the content above `<!--more-->` is what will show up as a precursor for the blog post and everything below that will be the actual content seen when opening up the blog. 
+Again, everything between the three dashes is metadata. And the content above `<!--more-->` is what will show up as a precursor for the blog post and everything below that will be the actual content seen when opening up the blog.
 {{<figure src="/images/personal-website/post-example.png"width="600">}}            
-            
+
 # Advanced Customizations
-            
+
 The out-of-the-box template for hugo-theme-mini offers the bulk of what you need for a blog-based website. But let's say you want to add some of your professional handles (like Linkedin or Github) to the top of your page. In [layouts/partials/profile.html](https://github.com/wkye/personal-website/blob/main/layouts/partials/profile.html#L14) you can add HTML code for these handles:
-            
+
 ```
 <h1>{{ .Site.Title }}</h1>
 
@@ -235,11 +235,11 @@ The out-of-the-box template for hugo-theme-mini offers the bulk of what you need
 ```  
 
 This is one example of many different customizations you can add to your website as you become more proficient in HTML.
-            
+
 # Summary
-            
+
 Creating a tutorial on how to create a website was harder than I thought:sweat_smile:. I see why there aren't many resources out there.
-            
+
 But as always, if you have any questions, feedback, or just want to connect, don't hesitate to reach out!
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
