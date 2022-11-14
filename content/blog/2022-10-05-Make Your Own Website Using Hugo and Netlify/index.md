@@ -8,8 +8,6 @@ slug: "website"
 tags: ['engineering', 'jupyter']
 title: "Make Your Own Website Using Hugo and Netlify"   
 ---
-{{% jupyter_cell_start markdown %}}
-
 <video style="display:block; width:100%; height:auto;" autoplay="" muted="" loop="loop">
     <source src="/videos/personal-website/website.mp4" type="video/mp4">
 </video>
@@ -238,19 +236,6 @@ This is one example of many different customizations you can add to your website
 
 # Summary
 
-Creating a tutorial on how to create a website was harder than I thought:sweat_smile:. I see why there aren't many resources out there.
+Creating a tutorial on how to create a website was harder than I thought :sweat_smile:. I see why there aren't many resources out there.
 
 But as always, if you have any questions, feedback, or just want to connect, don't hesitate to reach out!
-
-{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
-
-
-{{% jupyter_input_start %}}
-
-```python
-
-```
-
-{{% jupyter_input_end %}}
-
-{{% jupyter_cell_end %}}
