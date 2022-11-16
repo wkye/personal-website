@@ -6,7 +6,7 @@ hasMath: false
 notebook: true
 slug: "reproducibility"
 tags: ['data-science', 'dev-ops','poetry','pyenv','virtualenv','docker','jupyter','git']
-title: "Reproducibility, Reproducibility, Reproducibility - Data Science"   
+title: "Reproducibility, Reproducibility, Reproducibility: My Data Science Set Up"   
 ---
 
 Maybe I'm getting flashbacks of my time in grad school, but reproducibility has been on my mind - I want to make work as replicable as possible while at the same time not sacrificing efficiency. The result was I had to reset my mac to factory setting about 5 times in a span of 48 hours because I kept breaking my operating system.
