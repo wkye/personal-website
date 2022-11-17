@@ -12,7 +12,7 @@ title: "Make Your Own Website Using Hugo and Netlify"
     <source src="/videos/personal-website/website.mp4" type="video/mp4">
 </video>
 
-I have no formal training in computer science and would not consider myself an engineer. I do, however, think of myself as someone who "gets the job done". As I have worked in several startups (each subsequent company tends to get smaller :eyes:), I've picked up a scrappy mindset where I love learning new things. And fortunately, these smaller starts up offer the latitude to fail quickly and learn (more?) quickly!
+I have no formal training in computer science and would not consider myself an engineer. I do, however, think of myself as someone who "gets the job done". As I have worked in several small startups, I've picked up a scrappy mindset where I love learning new things. And fortunately, these starts up offer the latitude to fail quickly and learn (more?) quickly!
 
 In this post, I will show you the process of how I learned how to make this website!
 <!--more-->
