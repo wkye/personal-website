@@ -133,17 +133,10 @@ print(df.iloc[0]["description"][0:3000])
 {{% jupyter_input_start %}}
 
 ```python
-df = pd.read_pickle("df.pkl")
+#Data Cleaning
 df["description"] = df["description"].str.lower()
 df["description"] = df["description"].replace(r"\n", " ", regex=True)
-key_terms = [
-    "sociology",
-    "social science",
-    "physic",
-    "computer science",
-    "math",
-    "engineering",
-]
+key_terms = [ "sociology","social science","physic","computer science","math","engineering"]
 for key_term in key_terms:
     df[key_term] = df["description"].str.contains(key_term)
 ```
@@ -156,10 +149,14 @@ for key_term in key_terms:
 {{% jupyter_input_start %}}
 
 ```python
+print('PERCENTAGE OF TIMES KEY WORDS COME UP IN JOB DESCRIPTIONS')
 (df[key_terms].mean() * 100).sort_values()
 ```
 
 {{% jupyter_input_end %}}
+
+    PERCENTAGE OF TIMES KEY WORDS COME UP IN JOB DESCRIPTIONS
+
 
 
 
