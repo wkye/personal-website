@@ -174,36 +174,6 @@ for key_term in key_terms:
 
 
 
-{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
-
-
-{{% jupyter_input_start %}}
-
-```python
-# create figure to illustrate how frequently different education fields come up in data science job postings
-search_terms = [
-    "computer science",
-    "mathematics",
-    "engineering",
-    "economics",
-    "hard science",
-    "physics",
-    "social science",
-    "biology",
-    "sociology",
-    "psychology",
-]
-custom_functions.create_job_search_word_figure(
-    jobs_df, search_terms, display_figure=False
-)
-```
-
-{{% jupyter_input_end %}}
-
-{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
-
-{{<figure src="/images/leaving-academia/fig1.png" >}}
-
 {{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
 
 # Data Science Bootcamps:  Pros and Cons
