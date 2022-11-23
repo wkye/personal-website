@@ -6,7 +6,8 @@ enableEmoji = true
 
 [markup]
   [markup.highlight]
-    style = "github"
+    style = "emacs"
+    guessSyntax = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
