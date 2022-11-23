@@ -29,11 +29,11 @@ There were several people who's work I used as a reference to build my own site:
 I'm assuming that you have some knowledge of python and git but this is your first foray into hugo and netlify. Let's start with what [Hugo](https://gohugo.io/) is.
 
 Hugo is built up on Go, making it super fast and responsive. It's abstracted out enough from Go to make it simple for people who don't build websites for a living (like me) but at the same time highly extensible. First install hugo on to your machine:
-```
+```bash
 brew install hugo
 ```
 Once you have hugo installed, go to whatever base directory you work out of and run the following:
-```
+```bash
 hugo new site personal-website
 ```
 This will create a new folder titled `personal-website` with this directory tree:
@@ -62,7 +62,7 @@ For the purposes of keeping this tutorial succinct, the main folders you will ut
 Poetry is a package dependency tool. It will allow you to create a virtual environment that mimics the one I am currently in, and thus will enable you to reproduce any work that I do!
 
 Once you've installed poetry, initialize poetry within your `personal-website` folder and it should create a `pyproject.toml` Within your `pyproject.toml` file, copy the contents of my [pyproject.toml file](https://github.com/wkye/personal-website/blob/main/pyproject.toml). Then run `poetry install` and SHAZAAM! This should create a `poetry.lock` file and now your machine should more or less function the same as mine :smiley::
-```
+```bash
 # install poetry
 curl -sSL https://install.python-poetry.org | python3 -
 # initialize poetry within your project
@@ -79,13 +79,13 @@ Hugo pairs nicely with Netlify. Hugo is a great service to build your website, b
 # Setting up your home page
 
 The first step to building your website is to choose your theme. I went with [hugo-theme-mini](https://github.com/nodejh/hugo-theme-mini) because I felt it was simplistic and met the purposes of my website. Copy the contents of the repo into your `themes` folder (Note, I had to make some small tweaks to my theme, so mine may not exactly match yours)
-```
+```bash
 git clone https://github.com/nodejh/hugo-theme-mini themes/hugo-theme-mini/
 ```
 
 Now that you chose and obtained your theme, update your `theme` variable within your` config.toml` file to reflect the folder that houses your theme. Your config should look something like this
 
-```
+```bash
 baseURL = 'yourwebsitename'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
@@ -93,7 +93,7 @@ theme = 'hugo-theme-mini'
 ```
 
 Now if you run `hugo server`, your website will compile locally and you have taken the first step towards building your website :tada:. Just type in the localhost number produced into your browser. In this case `//localhost:52500/`.
-```
+```bash
 hugo server
 ```
 {{<figure src="/images/personal-website/hugo_home_screen.png">}}
@@ -105,7 +105,7 @@ You're now building your website from scratch, so the customizations are endless
 Let's start with the fundamentals of how pages are constructed. Within the `layouts` directory are HTML templates; each file determines how aspects of your page will look. The HTML code that produces the title and summary for your homepage is in [layouts/index.html](https://github.com/nodejh/hugo-theme-mini/blob/master/layouts/index.html#L8).
 
 The parameters `Title` and `Params.Bio` are the variables that the HTML file is using to build your site.
-```
+```html
 <h1>{{ .Site.Title }}</h1>
 
 {{ with .Site.Params.Bio }}
@@ -113,7 +113,7 @@ The parameters `Title` and `Params.Bio` are the variables that the HTML file is 
 {{ end }}
 ```
 We can change the title and bio of your website by updating the variable in `config.toml` file. It should look something like this:
-```
+```toml
 baseURL = 'yourwebsitename'
 languageCode = 'en-us'
 title = 'MY AWESOME NEW WEBSITE'
@@ -125,14 +125,14 @@ theme = 'hugo-theme-mini'
 ```
 
 The code that produces the image on your home page is also in [layouts/partials/profile.html](https://github.com/wkye/personal-website/blob/main/themes/hugo-theme-mini/layouts/partials/profile.html#L10)"
-```
+```html
 <header class="profile">
     {{ if .Site.Params.avatarLink }}
         <a href="{{ .Site.Params.avatarLink }}">
           <img class="avatar" alt="avatar" src="{{ "/images/avatar.png" | relURL }}" />
 ```
 The static directory is where you store the images you want to you. This particular code is looking for a file name `avatar.png` within the directory `static/images/`. So let's initialize this folder structure then download this [sample image from my github](https://raw.githubusercontent.com/wkye/personal-website/main/static/images/personal-website/sample_avatar.png) and copy it to your new `/static/images/` directory.    
-```
+```bash
 # make a new images directory under static
 mkdir static/images/
 # copy downloaded file to new images directory and change name to avatar.png
@@ -149,18 +149,18 @@ Next, I want to add an about page. To do so, we need to leverage the `content` f
 
 In [layouts/partials/navigation.html](https://github.com/wkye/personal-website/blob/main/themes/hugo-theme-mini/layouts/partials/navigation.html#L7) is where we see the `about` tag referenced in the navigation
 
-```
+```html
 <a href="{{ "/about" | relURL }}">{{ with .Site.Params.about }}{{ . }}{{ else }}{{ i18n "about" }}{{ end }}</a>
 ```
 
 Create a `_index.md` file under the `subdirectory /content/about` then open the file
-```
+```bash
 mkdir content/about && touch content/about/_index.md
 vim content/about/_index.md
 ```
 This `/about/_index.md`\` page will represent what you will see under your about page. Let's add some content
 
-```
+```md
 ---
 title = "About"
 description = "Description about file"
@@ -178,7 +178,7 @@ The picture in the avatar is from the Hayao Miyazaki musuem in LA. Highly recomm
 
 To create posts, initialize as `md` file in `content/posts`. All new `md` files will show up as new posts. So for example, let's create a post named `markdown-syntax.md` where we go overview how to write markdown files.
 
-```
+```bash
 # Create a new directory with a markdown-syntax file
 mkdir content/posts && touch content/posts/markdown-syntax.md
 # Update the contents of the file
@@ -187,7 +187,7 @@ vim content/about/markdown-syntax.md
 
 In `markdown-syntax.md` input the following
 
-```
+```md
 ---
 author = "Your Name"
 title = "Markdown Syntax Guide"
@@ -216,7 +216,7 @@ Again, everything between the three dashes is metadata. And the content above `<
 
 The out-of-the-box template for hugo-theme-mini offers the bulk of what you need for a blog-based website. But let's say you want to add some of your professional handles (like Linkedin or Github) to the top of your page. In [layouts/partials/profile.html](https://github.com/wkye/personal-website/blob/main/layouts/partials/profile.html#L14) you can add HTML code for these handles:
 
-```
+```html
 <h1>{{ .Site.Title }}</h1>
 
 <nav class="social-heading">

@@ -26,7 +26,7 @@ I like to use [Atom](https://atom.io/) as my lightweight editor when I'm doing s
 
 I use GitHub to maintain all my code and notebooks. I have a base folder where I install `Jupyter` (more on that later) and then within that directory, I have different repositories for my projects. I use [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) to connect to GitHub.
 
-```
+```bash
 # Create new data directory
 Mkdir data
 
@@ -49,7 +49,7 @@ Echo ‘Host *.github.com
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 ```
 Then add my SSH key in GitHub UI.
-```
+```bash
 #copy public key and paste into Github UI
 pbcopy < ~/.ssh/id_ed25519.pub
 ```
@@ -62,7 +62,7 @@ Maintaining my code in GitHub allows me to 1) make sure that my code exists and 
 
 Brew installs the packages that macOS is missing.
 
-```
+```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
@@ -72,7 +72,7 @@ The python version you’re using is important. Different packages interact with
 
 [Pyenv](https://realpython.com/intro-to-pyenv/) allows you to flexibly switch between multiple versions of python by injecting your python version into your path before you start any project or application.
 
-```
+```bash
 # install pyenv
 brew install pyenv
 
@@ -87,7 +87,7 @@ exec "$SHELL"
 
 I use `python 3.10.0` as my base python version and install it to auto activate in my base data science folder
 
-```
+```bash
 # install python 3.10.0 to be able to be used by pyenv
 pyenv install 3.10.0
 
@@ -104,12 +104,12 @@ Package management is by far the worst part of working in Python. I can’t even
 
 [Poetry](https://python-poetry.org/docs/) is a nice little tool to help resolve this issue. Poetry offers a clean way to maintain package dependencies through a `pyproject.toml` file while also easily resolving dependency issues.
 
-```
+```bash
 # install poetry
 curl -sSL https://install.python-poetry.org | python3 -
 
 # add poetry path to shell
-echo ‘export PATH="/Users/williamkye/.local/bin:$PATH’ >> ~/.zshrc
+echo ‘export PATH="/Users/williamkye/.local/bin:$PATH" >> ~/.zshrc
 
 # change to base data science directory
 cd ~/data
@@ -123,7 +123,7 @@ poetry add jupyterlab
 
 Finally, I disable poetry’s virtual environment management functionality and instead manage my virtual environment through `pyenv virutalenv`.
 
-```
+```bash
 poetry config virtualenvs.create false
 ```
 
@@ -131,7 +131,7 @@ poetry config virtualenvs.create false
 
 I use the pyenv [virtualenv](https://github.com/pyenv/pyenv-virtualenv) wrapper to maintain my virtual environments. For every new project I work on, I spin up a new virtual environment. Virtual environments are important so that projects you work on stay independent of one another and dependencies don't get entangled. Moreover, a well coupled virtual environment and package management system (poetry) reduces the barriers to anyone being able to pick up and run your code.
 
-```
+```bash
 # install pyenv-virtualenv
 brew install pyenv-virtualenv
 
@@ -150,7 +150,7 @@ Notebooks aren’t perfect, but they are useful for a lot of things. I use noteb
 
 The key for me to be able to work quickly and efficiently is an optimized jupyter set-up. Whether I need to switch between projects (i.e. virtual environments) to see how I did things in the past or whether I need to update a package, I need a centralized way to do development. I’ve found that leveraging jupyter kernels allows me to do so. I have a base folder where jupyter is installed then I switch between project kernels within the UI to allow me to also easily switch between projects
 
-```
+```bash
 # add ipykernel - this allows a simple way to switch between kernels within jupyter lab
 Poetry add ipykernel
 python -m ipykernel install --user --name data
@@ -169,7 +169,7 @@ The ultimate way to have true reproducibility is to use docker to work in a clou
 
 Download [docker](https://docs.docker.com/get-docker/), then create a docker image that caches and installs the requirements from our `pyproject.toml` and `poetry.lock` file. Note, a virtual environment is also not necessary in docker, so we do not create one. Do all this within a `Dockerfile` that is at the same level as your project.
 
-```
+```Docker
 ARG YOUR_ENV
 
 ENV YOUR_ENV=${YOUR_ENV} \
@@ -196,7 +196,7 @@ COPY . /code
 
 Then create `Makefile` that runs your dockerfile
 
-```
+```Makefile
 run:
 	docker build -t wkye/<project-name>  .
 	docker run --rm --name <project-name> \
