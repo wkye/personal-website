@@ -44,7 +44,7 @@ This is true of anyone transitioning from academia, but it is doubly true if you
 
 # How Common is "Sociology" in Job Postings vs. "Mathematics" and Other Hard Science Degree   
     
-Below I built a custom python package to query the Google Careers Search API for data science job titles and descriptions (See here for [python package](https://github.com/wkye/leaving-academia-for-tech/blob/main/src/resources/google_query.py) and here for [API instructions](https://github.com/wkye/leaving-academia-for-tech)). I use this data to see how often different educational fields comes up as requirements in job postings
+Below I built a custom python package to query the Google Careers Search API for data science job titles and descriptions (See here for [python package](https://github.com/wkye/leaving-academia-for-tech/blob/main/src/resources/google_query.py) and here for [API instructions](https://github.com/wkye/leaving-academia-for-tech)). I use this data to see how often different educational fields comes up as requirements in data science job postings.
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
 
@@ -80,52 +80,7 @@ df = google_jobs.query(q='data scientist',
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
 
-Below is a sample of a returned data science job search query. **You can see that Sociology comes up 2% of the time while in contrast math comes up 54% of the time**. This is a simple, yet powerful, example of how coming out of academia with a non-hard sciences training drastically shapes how the job market views you.
-
-{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
-
-
-{{% jupyter_input_start %}}
-
-```python
-print(df.iloc[0][["company_name", "title"]])
-print(df.iloc[0]["description"][0:3000])
-```
-
-{{% jupyter_input_end %}}
-
-    company_name      NATIONAL GRID CO USA (NE POWER)
-    title           Lead Data Scientist, Data Science
-    Name: 0, dtype: object
-    About us
-    
-    Every day we deliver safe and secure energy to homes, communities, and businesses. We are there when people need us the most. We connect people to the energy they need for the lives they live. The pace of change in society and our industry is accelerating and our expertise and track record puts us in an unparalleled position to shape the sustainable future of our industry...
-    
-    To be successful we must anticipate the needs of our customers, reducing the cost of energy delivery today and pioneering the flexible energy systems of tomorrow. This requires us to deliver on our promises and always look for new opportunities to grow, both ourselves and our business.
-    
-    National Grid is hiring a Lead Data Scientist for Data Management & Analytics Team in the Load Forecasting & Analytics Department" This position can be based out of Waltham, MA or Hicksville, NY, Brooklyn, NY, Syracuse, NY or Albany, NY.
-    Job Purpose
-    
-    The Load Forecasting & Analytics team produces the electric and gas load forecasts for National Grid as well economic analysis and insight. As a Lead Data Analyst within the Data Management & Analytics team, you will support the development, presentation, and defense of the gas and electric load forecasts for our US service territory by defining, managing, and executing all data-related tasks including, but not limited to: data acquisition, transformation, and storage; software/script development; data platform management and maintenance; requirements collection and stakeholder communications.
-    Key Accountabilities
-    
-    • Assemble small and large individual data sets that meet internal business requirements
-    • Design and implement ETL processes to collect, transform, and store data from various data sources (databases, APIs, FTPs, SharePoint, Power Platform, Azure) using a range of technologies depending upon the use case (SQL, R, Python, PowerShell)
-    • Develop, manage, and maintain the data platform, which includes database architecture, stored procedures, server task management, and reporting
-    • Drive the process to automate manual procedures and optimize data delivery for end-users
-    • Work with stakeholders to assist with data-related technical issues and support their data infrastructure needs
-    
-    Qualifications
-    
-    • Bachelor's degree in computer science, data science, statistics, informatics, information systems, or another quantitative field. Master's degree is strongly preferred, with a background in computer science / data science and/or database architecture.
-    • 5+ years of experience in a data-heavy role
-    • In-depth experience working with SQL databases (Oracle, SQL Server, PostgreSQL)
-    • Ability to write code in one or more scripting languages: R, Python
-    • GIS programming knowledge or experience strongly preferred
-    • Dev Ops engineering skills a plus (e.g., distributed computing, data pipelines)
-    • Experience with reporting/visualization tools like Tableau/Power BI preferred
-    • Successful history of manipulating, processing, and extracting value
-
+[Here is a sample job description](https://github.com/wkye/leaving-academia-for-tech/blob/main/sample_job_description.csv) from the query. **Out of 100 jobs, Sociology comes up 2% of the time while in contrast math comes up 54% of the time**. This is a simple, yet powerful, example of how coming out of academia with a non-hard sciences training drastically shapes how the job market views you.
 
 {{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
 
@@ -218,7 +173,7 @@ Data science is a fun field _because_ there is so much to learn. So don't be int
 width="600"
 caption="Me on the Today Show while at Dia. Mama we made it!" >}}
     
-After much toiling, I landed my first tech job as a statistical analyst at Dia&Co(https://www.dia.com/). You may think you need to know how to be a data scientist or analyst __before__ you land your first job (and maybe __you__ do), but for me, that wasn’t the case. At Dia, I was on a growth-focused team that comprised of machine learning engineers, other analysts, a product manager, and product designers. I learned that everything in product is somehow related to a funnel, you always lead with the summary (and not the methodology), and most people don’t care about what statistical assumptions your model took into consideration.
+After much toiling, I landed my first tech job as a statistical analyst at [Dia&Co](https://www.dia.com/). You may think you need to know how to be a data scientist or analyst __before__ you land your first job (and maybe __you__ do), but for me, that wasn’t the case. At Dia, I was on a growth-focused team that comprised of machine learning engineers, other analysts, a product manager, and product designers. I learned that everything in product is somehow related to a funnel, you always lead with the summary (and not the methodology), and most people don’t care about what statistical assumptions your model took into consideration.
     
 I was lucky enough to have wonderful leads that took the time to mentor me and show me how to do things (rather than just do it themselves). I never wrote any production-level ML code or some fancy Python package, but I was able to see the behind the scene process of how recommendation systems were built and data systems were architectured. I highly recommend that type of experience.
     
