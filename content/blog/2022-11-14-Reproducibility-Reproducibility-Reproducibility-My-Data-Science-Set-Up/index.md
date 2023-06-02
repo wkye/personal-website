@@ -9,18 +9,42 @@ tags: ['data-science', 'dev-ops','poetry','pyenv','virtualenv','docker','jupyter
 title: "Reproducibility, Reproducibility, Reproducibility: My Data Science Set-Up"   
 ---
 
+# Table of Contents
+
+- <a href="#introduction">Introduction</a><br>
+- <a href="#problem">The Problem</a><br>
+- <a href="#id">Text Editors / IDE</a><br>
+- <a href="#github">Github</a><br>
+- <a href="#brew">Brew</a><br>
+- <a href="#python">Python Management/a><br>
+- <a href="#poetry">Poetry</a><br>
+- <a href="#virtualenv">Virtualenv</a><br>
+- <a href="#notebook">Notebook</a><br>
+- <a href="#docker">Docker</a><br>
+- <a href="#summary">Summary</a><br>
+
+<p><a name="introduction"></a></p>
+
+# Introduction
+
 Maybe I'm getting flashbacks of my time in grad school, but reproducibility has been on my mind - I want to make my work as replicable as possible, while at the same time not sacrificing efficiency. The result was I had to reset my Mac to factory setting about 5 times in a span of 48 hours because I kept breaking my operating system.
 
 
 But this hit a larger point that I've been trying to drive home: I want to be able to drop and pick up my work whenever and wherever I am (and no matter how many times I have to reset my computer :grimacing:).<!--more--> Whether that's picking up an old project or using a different machine, I want my work to be highly portable and interoperable . To that end, this post describes the data science set-up that allows me such a workflow. Full disclosure, this might read as an onboarding doc… cause another purpose of this post was to create a checklist if I end up breaking my computer again :sweat_smile:.
 
+<p><a name="problem"></a></p>
+
 # The Problem
 
 The problem is pretty simple - whatever I’m working on today might work, but next week if I update a package for a different project or if I’m using a new computer, how can I ensure that my code will still work? In other words, how can I manufacture a data science set-up such that I’m forced to create a highly self-contained and portable workflow that I can continually iterate upon.
 
+<p><a name="ide"></a></p>
+
 # Text Editors / IDE
 
 I like to use [Atom](https://atom.io/) as my lightweight editor when I'm doing simple changes and I rely on [Pycharm](https://www.jetbrains.com/lp/pycharm-anaconda/) if I ever want to build something more robust. Pycharm has great features like merge conflicts and tool-tiping to make sure you remember to do the small but annoying stuff in your code.
+
+<p><a name="github"></a></p>
 
 # Github
 
@@ -58,6 +82,8 @@ width="600">}}
 
 Maintaining my code in GitHub allows me to 1) make sure that my code exists and is accessible outside of my local machine and 2) create a stable source of truth for my code. At times, I rapidly make changes to my code and things can break. As long as I push code to GitHub consistently I can also revert to a stable state when necessary.
 
+<p><a name="brew"></a></p>
+
 # Brew
 
 Brew installs the packages that macOS is missing.
@@ -65,6 +91,8 @@ Brew installs the packages that macOS is missing.
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+<p><a name="python"></a></p>
 
 # Python Management
 
@@ -98,6 +126,8 @@ cd ~/data
 pyenv local 3.10.0
 ```
 
+<p><a name="poetry"></a></p>
+
 # Poetry
 
 Package management is by far the worst part of working in Python. I can’t even tell you the countless hours I’ve spent digging through logs to figure out why something suddenly stopped working. And it's the worst when the reason is that you installed a tiny little package for a completely separate project that caused your entire working environment to become unstable (hence the need for virtual environments, see below).
@@ -127,6 +157,8 @@ Finally, I disable poetry’s virtual environment management functionality and i
 poetry config virtualenvs.create false
 ```
 
+<p><a name="virtualenv"></a></p>
+
 # Virtualenv
 
 I use the pyenv [virtualenv](https://github.com/pyenv/pyenv-virtualenv) wrapper to maintain my virtual environments. For every new project I work on, I spin up a new virtual environment. Virtual environments are important so that projects you work on stay independent of one another and dependencies don't get entangled. Moreover, a well coupled virtual environment and package management system (poetry) reduces the barriers to anyone being able to pick up and run your code.
@@ -143,6 +175,8 @@ Pyenv local data
 ```
 
 **Note** - I don’t completely know why, but for my desired process of maintaining packages via poetry but switching between virtual environments through pyenv virtualenv, I had to install virtualenv after poetry.
+
+<p><a name="notebook"></a></p>
 
 # Notebook
 
@@ -162,6 +196,8 @@ poetry add black isort
 
 {{<figure src="/images/reproducibility/jupyter-lab-example.png"
 width="600">}}
+
+<p><a name="docker"></a></p>
 
 # Docker
 
@@ -204,6 +240,8 @@ run:
 	-p 8888:8888 \
 	<project-name>
 ```
+
+<p><a name="summary"></a></p>
 
 # Summary
 
