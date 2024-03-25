@@ -9,28 +9,11 @@ tags: ['data-science', 'dev-ops','poetry','pyenv','virtualenv','docker','jupyter
 title: "Reproducibility, Reproducibility, Reproducibility: My Data Science Set-Up"   
 ---
 
-# Table of Contents
-
-- <a href="#introduction">Introduction</a><br>
-- <a href="#problem">The Problem</a><br>
-- <a href="#id">Text Editors / IDE</a><br>
-- <a href="#github">Github</a><br>
-- <a href="#brew">Brew</a><br>
-- <a href="#python">Python Management/a><br>
-- <a href="#poetry">Poetry</a><br>
-- <a href="#virtualenv">Virtualenv</a><br>
-- <a href="#notebook">Notebook</a><br>
-- <a href="#docker">Docker</a><br>
-- <a href="#summary">Summary</a><br>
-
-<p><a name="introduction"></a></p>
-
 # Introduction
 
-Maybe I'm getting flashbacks of my time in grad school, but reproducibility has been on my mind - I want to make my work as replicable as possible, while at the same time not sacrificing efficiency. The result was I had to reset my Mac to factory setting about 5 times in a span of 48 hours because I kept breaking my operating system.
+Maybe I'm getting flashbacks of my time in grad school, but reproducibility has been on my mind - I want to make my work as replicable as possible, while at the same time not sacrificing efficiency.
 
-
-But this hit a larger point that I've been trying to drive home: I want to be able to drop and pick up my work whenever and wherever I am (and no matter how many times I have to reset my computer :grimacing:).<!--more--> Whether that's picking up an old project or using a different machine, I want my work to be highly portable and interoperable . To that end, this post describes the data science set-up that allows me such a workflow. Full disclosure, this might read as an onboarding doc… cause another purpose of this post was to create a checklist if I end up breaking my computer again :sweat_smile:.
+I want to be able to drop and pick up my work whenever and wherever I am<!--more--> Whether that's revisiting an old project or using a different machine, I want my work to be highly portable and interoperable . To that end, this post describes the data science set-up that allows me such a workflow. Full disclosure, this might read as an onboarding doc… cause another purpose of this post was to create a checklist if I end up breaking my computer again :sweat_smile:.
 
 <p><a name="problem"></a></p>
 
