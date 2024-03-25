@@ -9,7 +9,6 @@ tags: ['data-science', 'dev-ops','poetry','pyenv','virtualenv','docker','jupyter
 title: "Reproducibility, Reproducibility, Reproducibility: My Data Science Set-Up"   
 ---
 
-# Introduction
 
 Maybe I'm getting flashbacks of my time in grad school, but reproducibility has been on my mind - I want to make my work as replicable as possible, while at the same time not sacrificing efficiency.
 
